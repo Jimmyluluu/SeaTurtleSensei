@@ -8,23 +8,29 @@
 import SwiftUI
 
 
-struct SwiftUIView: View {
+struct StartView: View {
     var body: some View {
-       
-        
-        ZStack{
-            Color(hex:"EAF9FF")
-        }.edgesIgnoringSafeArea(.all)
-        
+        NavigationView{
+            ZStack{
+                Color(hex:"EAF9FF").edgesIgnoringSafeArea(.all)
+                VStack{
+                    Image("Logo")
+                
+                    NavigationLink(
+                        destination: Step2(),
+                        label: {
+                            Image("Start")
+                        })
+                    Image("Turtle").resizable().scaledToFit()
+                }
+            }
+        }
     }
 }
 
 
-
 struct SwiftUIView_Previews: PreviewProvider {
     static var previews: some View {
-        Group {
-            SwiftUIView()
-        }
+        StartView()
     }
 }

@@ -16,12 +16,14 @@ struct StartView: View {
                 VStack{
                     Image("Logo")
                     
+                    
                     NavigationLink(
                         destination: Step2(),
                         label: {
                             Image("Start")
                         })
                     Image("Turtle")
+                        .frame(width: 100, height: 300, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                 }
             }
         }

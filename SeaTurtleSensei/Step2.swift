@@ -9,26 +9,24 @@ import SwiftUI
 
 struct Step2: View {
     var body: some View {
-        NavigationView {
-            ZStack{
-                Color(hex:"EAF9FF").edgesIgnoringSafeArea(.all)
-                VStack{
-                    Image("Top").resizable().frame(width: 400, height: 200).edgesIgnoringSafeArea(.top)
-                    ZStack {
-                        Color(hex:"EAF9FF").edgesIgnoringSafeArea(.all)
-                        HStack {
-                            NavigationLink(
-                                destination:EnterCode(),
-                                label: {
-                                    Image("Student")
-                                })
-                            NavigationLink(
-                                destination: Login(),
-                                label: {
-                                    Image("Teacher")
-                                })
-                        }.offset(x: 0, y: -150)
-                    }
+        ZStack{
+            Color(hex:"EAF9FF").edgesIgnoringSafeArea(.all)
+            VStack{
+                Image("Top").resizable().frame(width: 400, height: 200).edgesIgnoringSafeArea(.top)
+                ZStack {
+                    Color(hex:"EAF9FF").edgesIgnoringSafeArea(.all)
+                    HStack {
+                        NavigationLink(
+                            destination:EnterCode(),
+                            label: {
+                                Image("Student")
+                            })
+                        NavigationLink(
+                            destination: Login(),
+                            label: {
+                                Image("Teacher")
+                            })
+                    }.offset(x: 0, y: -150)
                 }
             }
         }

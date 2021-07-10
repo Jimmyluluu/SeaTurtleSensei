@@ -10,18 +10,18 @@ import SwiftUI
 
 struct StartView: View {
     var body: some View {
-        NavigationView{
-            ZStack{
+        NavigationView {
+            ZStack {
                 Color(hex:"EAF9FF").edgesIgnoringSafeArea(.all)
                 VStack{
                     Image("Logo")
-                
+                    
                     NavigationLink(
                         destination: Step2(),
                         label: {
                             Image("Start")
                         })
-                    Image("Turtle").resizable().scaledToFit()
+                    Image("Turtle")
                 }
             }
         }

@@ -1,13 +1,13 @@
 //
-//  EnterCode.swift
+//  SignUp.swift
 //  SeaTurtleSensei
 //
-//  Created by 魯敬元 on 2021/7/10.
+//  Created by 一隻阿旻 on 2021/7/11.
 //
 
 import SwiftUI
 
-struct EnterCode: View {
+struct SignUp: View {
     var body: some View {
         ZStack{
             Color(hex:"EAF9FF").edgesIgnoringSafeArea(.all)
@@ -17,8 +17,8 @@ struct EnterCode: View {
     }
 }
 
-struct EnterCode_Previews: PreviewProvider {
+struct SignUp_Previews: PreviewProvider {
     static var previews: some View {
-        EnterCode()
+        SignUp()
     }
 }

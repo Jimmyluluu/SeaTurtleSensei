@@ -61,8 +61,8 @@ struct Login: View {
                         )
                         .frame(width: 310, height: 40, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                         .padding(10)
-                }
-                .offset(x: 0, y: 55)
+                }.offset(x: 0, y: 55)
+                
                 VStack{
                    NavigationLink(
                     destination: Home()){
@@ -72,6 +72,7 @@ struct Login: View {
                         .background(RoundedRectangle(cornerRadius:30).foregroundColor(Color(hex: "07A9B4")))
                         .offset(x: 0, y: 65)
                    }.padding(5)
+                    
                     NavigationLink(
                      destination: Home()){
                      Text("Sign up")
@@ -82,9 +83,9 @@ struct Login: View {
                          .offset(x: 0, y: 75)
                     }
                 }.padding(10)
+                
+            }
         }
-            
-    }
     }
 }
     

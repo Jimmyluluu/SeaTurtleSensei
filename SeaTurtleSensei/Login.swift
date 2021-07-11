@@ -46,10 +46,11 @@ struct Login: View {
                             RoundedRectangle(cornerRadius: 10)
                                 .foregroundColor(.white)
                         )
+                        .autocapitalization(.none)
                         .frame(width: 310, height: 40, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                         .padding()
                     
-                    TextField("Password", text: $pwd)
+                    SecureField("Password", text: $pwd)
                         .foregroundColor(Color(hex: "1A90AA"))
                         .padding()
                         .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color(hex: "1A90AA"), lineWidth: 1)

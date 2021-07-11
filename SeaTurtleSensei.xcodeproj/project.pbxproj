@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		584EAAB22699E4670038D284 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584EAAB12699E4670038D284 /* Home.swift */; };
+		58C2ECB8269B26FE0049AD45 /* SignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C2ECB7269B26FE0049AD45 /* SignUp.swift */; };
+		58C2ECBA269B2C120049AD45 /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C2ECB9269B2C120049AD45 /* Schedule.swift */; };
+		58C2ECBC269B2CB20049AD45 /* SetupExam.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C2ECBB269B2CB20049AD45 /* SetupExam.swift */; };
+		58C2ECBE269B2CEA0049AD45 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C2ECBD269B2CEA0049AD45 /* Account.swift */; };
+		58C2ECC0269B2D4A0049AD45 /* CorrectPaper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C2ECBF269B2D4A0049AD45 /* CorrectPaper.swift */; };
+		58C2ECC2269B2D8D0049AD45 /* CheckGrade.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C2ECC1269B2D8D0049AD45 /* CheckGrade.swift */; };
 		720BACD72698B11E0016391B /* EnterCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720BACD62698B11E0016391B /* EnterCode.swift */; };
 		720BACD92698B15D0016391B /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720BACD82698B15D0016391B /* Login.swift */; };
 		7234711826945529007C8CCB /* Step2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7234711726945529007C8CCB /* Step2.swift */; };
@@ -40,6 +46,12 @@
 
 /* Begin PBXFileReference section */
 		584EAAB12699E4670038D284 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
+		58C2ECB7269B26FE0049AD45 /* SignUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUp.swift; sourceTree = "<group>"; };
+		58C2ECB9269B2C120049AD45 /* Schedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Schedule.swift; sourceTree = "<group>"; };
+		58C2ECBB269B2CB20049AD45 /* SetupExam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupExam.swift; sourceTree = "<group>"; };
+		58C2ECBD269B2CEA0049AD45 /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
+		58C2ECBF269B2D4A0049AD45 /* CorrectPaper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CorrectPaper.swift; sourceTree = "<group>"; };
+		58C2ECC1269B2D8D0049AD45 /* CheckGrade.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckGrade.swift; sourceTree = "<group>"; };
 		720BACD62698B11E0016391B /* EnterCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterCode.swift; sourceTree = "<group>"; };
 		720BACD82698B15D0016391B /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 		7234711726945529007C8CCB /* Step2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Step2.swift; sourceTree = "<group>"; };
@@ -111,9 +123,15 @@
 				728E1EB1268F026500EC401C /* ContentView.swift */,
 				72544BF02692E654004F4E45 /* StartView.swift */,
 				7234711726945529007C8CCB /* Step2.swift */,
-				720BACD62698B11E0016391B /* EnterCode.swift */,
 				720BACD82698B15D0016391B /* Login.swift */,
+				58C2ECB7269B26FE0049AD45 /* SignUp.swift */,
 				584EAAB12699E4670038D284 /* Home.swift */,
+				720BACD62698B11E0016391B /* EnterCode.swift */,
+				58C2ECBB269B2CB20049AD45 /* SetupExam.swift */,
+				58C2ECB9269B2C120049AD45 /* Schedule.swift */,
+				58C2ECBD269B2CEA0049AD45 /* Account.swift */,
+				58C2ECBF269B2D4A0049AD45 /* CorrectPaper.swift */,
+				58C2ECC1269B2D8D0049AD45 /* CheckGrade.swift */,
 				72449D282692F39200F07A74 /* Extension.swift */,
 				728E1EB3268F026600EC401C /* Assets.xcassets */,
 				728E1EB8268F026600EC401C /* Info.plist */,
@@ -282,8 +300,14 @@
 				728E1EB0268F026500EC401C /* SeaTurtleSenseiApp.swift in Sources */,
 				72544BF12692E654004F4E45 /* StartView.swift in Sources */,
 				720BACD72698B11E0016391B /* EnterCode.swift in Sources */,
+				58C2ECBE269B2CEA0049AD45 /* Account.swift in Sources */,
+				58C2ECBC269B2CB20049AD45 /* SetupExam.swift in Sources */,
 				7234711826945529007C8CCB /* Step2.swift in Sources */,
 				584EAAB22699E4670038D284 /* Home.swift in Sources */,
+				58C2ECB8269B26FE0049AD45 /* SignUp.swift in Sources */,
+				58C2ECBA269B2C120049AD45 /* Schedule.swift in Sources */,
+				58C2ECC0269B2D4A0049AD45 /* CorrectPaper.swift in Sources */,
+				58C2ECC2269B2D8D0049AD45 /* CheckGrade.swift in Sources */,
 				72449D292692F39200F07A74 /* Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

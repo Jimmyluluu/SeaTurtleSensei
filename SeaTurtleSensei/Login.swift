@@ -70,23 +70,21 @@ struct Login: View {
                             .frame(width: 140, height: 40, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                             .foregroundColor(.white)
                             .background(RoundedRectangle(cornerRadius:30).foregroundColor(Color(hex: "07A9B4")))
-                            .offset(x: 0, y: 65)
-                   }.padding(5)
+                   }.offset(x: 0, y: 65).padding(5)
                     
                     NavigationLink(
                          destination: SignUp()){
-                         Text("Sign up")
-                             .frame(width: 140, height: 40, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                             .foregroundColor(Color(hex: "07A9B4"))
+                        Text("Sign up")
+                            .frame(width: 140, height: 40, alignment: .center)
+                            .foregroundColor(Color(hex: "07A9B4"))
                             .overlay(RoundedRectangle(cornerRadius: 30).stroke(Color(hex: "07A9B4"), lineWidth: 2)
                             )
-                             .offset(x: 0, y: 75)
-                    }
-
+                    }.offset(x: 0, y: 75)
+                    
                 }.padding(10)
                 
-            }
-        }.padding(5)
+            }.padding(5)
+        }
     }
 }
 

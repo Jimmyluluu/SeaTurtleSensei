@@ -80,9 +80,7 @@ struct Login: View {
                             .overlay(RoundedRectangle(cornerRadius: 30).stroke(Color(hex: "07A9B4"), lineWidth: 2)
                             )
                     }.offset(x: 0, y: 75)
-                    
-                }.padding(10)
-                
+                }
             }.padding(5)
         }
     }

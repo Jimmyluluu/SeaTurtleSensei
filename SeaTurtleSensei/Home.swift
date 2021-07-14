@@ -17,43 +17,42 @@ struct Home: View {
                     Group{
                         Circle()
                             .fill(Color(hex: "097294"))
-                            .frame(width: 55, height: 55)
-                            .offset(x: 135, y: -280)
-                    }
-               }
+                            .frame(width: 50, height: 55)
+                    }.offset(x: 60, y: 0)
+                }.offset(x: 60, y: -310)
                 ScrollView(.horizontal) {
-                            HStack {
-                                NavigationLink(
-                                    destination: Schedule()){
-                                    Text("行事曆")
-                                        .frame(width: 120, height: 40, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                                        .foregroundColor(.white)
-                                        .background(RoundedRectangle(cornerRadius:30).foregroundColor(Color(hex: "B9D3DA")))
-                               }
-                                NavigationLink(
-                                    destination: SetupExam()){
-                                    Text("設定考卷")
-                                        .frame(width: 120, height: 40, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                                        .foregroundColor(.white)
-                                        .background(RoundedRectangle(cornerRadius:30).foregroundColor(Color(hex: "B9D3DA")))
-                               }
-                                NavigationLink(
-                                    destination: CorrectPaper()){
-                                    Text("批改考卷")
-                                        .frame(width: 120, height: 40, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                                        .foregroundColor(.white)
-                                        .background(RoundedRectangle(cornerRadius:30).foregroundColor(Color(hex: "B9D3DA")))
-                               }
-                                NavigationLink(
-                                    destination: CorrectPaper()){
-                                    Text("成績管理")
-                                        .frame(width: 120, height: 40, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                                        .foregroundColor(.white)
-                                        .background(RoundedRectangle(cornerRadius:30).foregroundColor(Color(hex: "B9D3DA")))
-                               }
+                    HStack {
+                        NavigationLink(
+                            destination: Schedule()){
+                            Text("行事曆")
+                                .frame(width: 120, height: 40, alignment: .center)
+                                .foregroundColor(.white)
+                                .background(RoundedRectangle(cornerRadius:30).foregroundColor(Color(hex: "B9D3DA")))
                         }
+                        NavigationLink(
+                            destination: SetupExam()){
+                            Text("設定考卷")
+                                .frame(width: 120, height: 35, alignment: .center)
+                                .foregroundColor(.white)
+                                .background(RoundedRectangle(cornerRadius:30).foregroundColor(Color(hex: "B9D3DA")))
+                        }
+                        NavigationLink(
+                            destination: CorrectPaper()){
+                            Text("批改考卷")
+                                .frame(width: 120, height: 35, alignment: .center)
+                                .foregroundColor(.white)
+                                .background(RoundedRectangle(cornerRadius:30).foregroundColor(Color(hex: "B9D3DA")))
+                        }
+                        NavigationLink(
+                            destination: CorrectPaper()){
+                            Text("成績管理")
+                                .frame(width: 120, height: 35, alignment: .center)
+                                .foregroundColor(.white)
+                                .background(RoundedRectangle(cornerRadius:30).foregroundColor(Color(hex: "B9D3DA")))
+                        }
+                    }
                 }
-                .offset(x: 0, y: -280.0)
+                .offset(x: 0, y: -320.0)
                 .padding()
             }
         }

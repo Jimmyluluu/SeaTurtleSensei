@@ -11,17 +11,13 @@ struct Home: View {
     var body: some View {
         ZStack{
             Color(hex:"FFFFF").edgesIgnoringSafeArea(.all)
-            VStack{
+            VStack(alignment: .center,spacing: 10){
                 NavigationLink(
                     destination: Account()){ //點選頭像編輯帳號
-                    Group{
-                        Circle()
-                            .fill(Color(hex: "097294"))
-                            .frame(width: 50, height: 55)
-                    }.offset(x: 60, y: 0)
-                }.offset(x: 60, y: -310)
+                    Image("LittleLogo").resizable().background(Color(hex: "097294")).clipShape(Circle()).frame(width: 60, height: 60)
+                }
                 ScrollView(.horizontal) {
-                    HStack {
+                    HStack(alignment: .center, spacing: 10) {
                         NavigationLink(
                             destination: Schedule()){
                             Text("行事曆")
@@ -52,9 +48,8 @@ struct Home: View {
                         }
                     }
                 }
-                .offset(x: 0, y: -320.0)
                 .padding()
-            }
+            }.offset(x: 0, y: -320.0)
         }
     }
         

@@ -25,7 +25,7 @@ struct Login: View {
                     .frame(width: 250, height: 250)
                     .offset(x: 130, y: -220)
             }
-            Image("Turtle without wave")
+            Image("Turtle2")
                 .frame(width: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/)
                 .offset(x: 80, y: -160)
             

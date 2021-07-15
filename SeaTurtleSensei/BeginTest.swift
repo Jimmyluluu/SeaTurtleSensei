@@ -29,7 +29,7 @@ struct BeginTest: View {
             Text("進行測驗")
                 .fontWeight(.bold)
                 .foregroundColor(Color(hex: "1A90AA"))
-                .offset(x: 0, y: -285)
+                .offset(x: 0, y: -280)
                 .font(.system(size: 20))
             ZStack{
                 RoundedRectangle(cornerRadius: 25)

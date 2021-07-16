@@ -8,7 +8,10 @@
 import SwiftUI
 
 struct EnterCode: View {
+    
+    //輸入考卷代碼
     @State private var entercode = ""
+    
     var body: some View {
         ZStack{
             Color(hex:"EAF9FF").edgesIgnoringSafeArea(.all)

@@ -8,8 +8,13 @@
 import SwiftUI
 
 struct Login: View {
+    
+    //老師帳號
     @State private var email = ""
+    
+    //老師密碼
     @State private var pwd = ""
+    
     var body: some View {
         ZStack{
             Color(hex:"EAF9FF").edgesIgnoringSafeArea(.all)

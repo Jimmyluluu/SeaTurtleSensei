@@ -12,10 +12,14 @@ struct Home: View {
         ZStack{
             Color(hex:"FFFFF").edgesIgnoringSafeArea(.all)
             VStack(alignment: .center,spacing: 10){
+                Text("Sea Turtle Sensei")
+                    .offset(x: 0, y: -265)
+                
                 NavigationLink(
                     destination: Account()){ //點選頭像編輯帳號
                     Image("LittleLogo").resizable().background(Color(hex: "097294")).clipShape(Circle()).frame(width: 60, height: 60)
-                }
+                }.offset(x: 145, y: -320)
+                
                 ScrollView(.horizontal) {
                     HStack(alignment: .center, spacing: 10) {
                         NavigationLink(
@@ -49,7 +53,8 @@ struct Home: View {
                     }
                 }
                 .padding()
-            }.offset(x: 0, y: -320.0)
+                .offset(x: 0, y: -335)
+            }
         }
     }
         

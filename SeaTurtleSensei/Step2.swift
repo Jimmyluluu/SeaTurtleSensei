@@ -15,6 +15,12 @@ struct Step2: View {
                 Image("Top").resizable().frame(width: 400, height: 200).edgesIgnoringSafeArea(.top)
                 ZStack {
                     Color(hex:"EAF9FF").edgesIgnoringSafeArea(.all)
+                    Text("請選擇你的身份")
+                        .fontWeight(.bold)
+                        .font(.system(size: 20))
+                        .foregroundColor(Color(hex: "1A90AA"))
+                        .offset(x: 0, y: -300)
+                        
                     HStack {
                         NavigationLink(
                             destination:EnterCode(),

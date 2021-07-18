@@ -14,11 +14,15 @@ struct DatePicker: View {
         ZStack {
             Color(hex:"52A8D2").edgesIgnoringSafeArea(.all)
             Text("Sea Turtle Sensei")
-                .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
+                .fontWeight(.bold)
                 .font(.system(size: 18))
                 .foregroundColor(.white)
                 .frame(width: 150, height: 100)
                 .offset(x: -60, y: -240)
+            Circle()
+                .offset(x: 100, y: -248)
+                .foregroundColor(Color(hex: "1A469C"))
+                .frame(width: 60, height: 60, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
             Image("LittleLogo")
                 .offset(x: 100, y: -250)
             
@@ -70,7 +74,8 @@ struct DatePicker: View {
                         .background(RoundedRectangle(cornerRadius:10).foregroundColor(Color(hex: "F3B1C5")))
                 }
                 .offset(x: 0, y: 120)
-                .padding(5)
+            .padding(5)
+            
             
         }
     }

@@ -22,6 +22,9 @@
 		5DA7ABAA26A4202F0074BC3F /* SetTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DA7ABA926A4202F0074BC3F /* SetTest.swift */; };
 		5DA7ABAB26A4202F0074BC3F /* SetTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DA7ABA926A4202F0074BC3F /* SetTest.swift */; };
 		5DA7ABAC26A4202F0074BC3F /* SetTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DA7ABA926A4202F0074BC3F /* SetTest.swift */; };
+		5DA7ABAE26A4226A0074BC3F /* SetQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DA7ABAD26A4226A0074BC3F /* SetQuestion.swift */; };
+		5DA7ABAF26A4226A0074BC3F /* SetQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DA7ABAD26A4226A0074BC3F /* SetQuestion.swift */; };
+		5DA7ABB026A4226A0074BC3F /* SetQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DA7ABAD26A4226A0074BC3F /* SetQuestion.swift */; };
 		720BACD72698B11E0016391B /* EnterCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720BACD62698B11E0016391B /* EnterCode.swift */; };
 		720BACD92698B15D0016391B /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720BACD82698B15D0016391B /* Login.swift */; };
 		7221254226A028B2000A6495 /* Books.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7221254126A028B2000A6495 /* Books.swift */; };
@@ -65,6 +68,7 @@
 		58C2ECC526A014EF0049AD45 /* Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
 		5D916D3E26A2E7610019F4CA /* DatePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePicker.swift; sourceTree = "<group>"; };
 		5DA7ABA926A4202F0074BC3F /* SetTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetTest.swift; sourceTree = "<group>"; };
+		5DA7ABAD26A4226A0074BC3F /* SetQuestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetQuestion.swift; sourceTree = "<group>"; };
 		720BACD62698B11E0016391B /* EnterCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnterCode.swift; sourceTree = "<group>"; };
 		720BACD82698B15D0016391B /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 		7221254126A028B2000A6495 /* Books.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Books.swift; sourceTree = "<group>"; };
@@ -155,6 +159,7 @@
 				7221254126A028B2000A6495 /* Books.swift */,
 				5D916D3E26A2E7610019F4CA /* DatePicker.swift */,
 				5DA7ABA926A4202F0074BC3F /* SetTest.swift */,
+				5DA7ABAD26A4226A0074BC3F /* SetQuestion.swift */,
 			);
 			path = SeaTurtleSensei;
 			sourceTree = "<group>";
@@ -318,6 +323,7 @@
 				728E1EB2268F026500EC401C /* ContentView.swift in Sources */,
 				5DA7ABAA26A4202F0074BC3F /* SetTest.swift in Sources */,
 				728E1EB0268F026500EC401C /* SeaTurtleSenseiApp.swift in Sources */,
+				5DA7ABAE26A4226A0074BC3F /* SetQuestion.swift in Sources */,
 				72544BF12692E654004F4E45 /* StartView.swift in Sources */,
 				720BACD72698B11E0016391B /* EnterCode.swift in Sources */,
 				58C2ECC626A014EF0049AD45 /* Test.swift in Sources */,
@@ -340,6 +346,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5DA7ABAF26A4226A0074BC3F /* SetQuestion.swift in Sources */,
 				5DA7ABAB26A4202F0074BC3F /* SetTest.swift in Sources */,
 				728E1EC2268F026600EC401C /* SeaTurtleSenseiTests.swift in Sources */,
 				5D916D4026A2E7610019F4CA /* DatePicker.swift in Sources */,
@@ -350,6 +357,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5DA7ABB026A4226A0074BC3F /* SetQuestion.swift in Sources */,
 				5DA7ABAC26A4202F0074BC3F /* SetTest.swift in Sources */,
 				728E1ECD268F026600EC401C /* SeaTurtleSenseiUITests.swift in Sources */,
 				5D916D4126A2E7610019F4CA /* DatePicker.swift in Sources */,

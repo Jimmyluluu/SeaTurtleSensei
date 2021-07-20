@@ -12,7 +12,7 @@ struct DatePicker: View {
     @State private var time = ""
     var body: some View {
         ZStack {
-            Color(hex:"52A8D2").edgesIgnoringSafeArea(.all)
+            Color(hex:"0296B7").edgesIgnoringSafeArea(.all)
             Text("Sea Turtle Sensei")
                 .fontWeight(.bold)
                 .font(.system(size: 18))

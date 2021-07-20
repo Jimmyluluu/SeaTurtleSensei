@@ -10,9 +10,9 @@ import SwiftUI
 struct SignUp: View {
     var body: some View {
         ZStack{
-            Color(hex:"EAF9FF").edgesIgnoringSafeArea(.all)
+            Color(hex:"1A90AA").edgesIgnoringSafeArea(.all)
             Text("WELCOME! LET'S SIGN UP!!!")
-                .foregroundColor(Color(hex: "1A90AA"))
+                .foregroundColor(Color(hex: "FFFFF"))
         }
     }
 }

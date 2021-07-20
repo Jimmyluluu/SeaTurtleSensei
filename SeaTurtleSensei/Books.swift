@@ -33,4 +33,7 @@ class Api : ObservableObject{
         }.resume()
         
     }
+    func Connect() {
+        guard let url = URL(string: "http://192.168.50.178:3000") else { return }
+    }
 }

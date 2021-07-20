@@ -6,9 +6,16 @@
 //
 import Foundation
 import SwiftUI
-
+import UIKit
 
 struct MarkPapers: View {
+    
+    
+    @State var selection: Set<UUID> = []
+    //@State var item: [Item] = []
+    @State var TestTitle : [TestName] = []
+    var Name = ["3/31系統程式第一次小考","4/17系統程式第二次小考"]
+    
     var body: some View {
         
         ZStack{

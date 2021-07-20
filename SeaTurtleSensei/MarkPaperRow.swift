@@ -9,4 +9,8 @@ import Foundation
 import SwiftUI
 import CoreLocation
 
+struct TestName :Identifiable {
+    let id = UUID()
+    var name: String
+}
 

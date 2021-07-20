@@ -29,6 +29,8 @@
 		720BACD92698B15D0016391B /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720BACD82698B15D0016391B /* Login.swift */; };
 		7221254226A028B2000A6495 /* Books.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7221254126A028B2000A6495 /* Books.swift */; };
 		7234711826945529007C8CCB /* Step2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7234711726945529007C8CCB /* Step2.swift */; };
+		7234B5C926A71E6F0000ABD4 /* MarkPapers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7234B5C826A71E6F0000ABD4 /* MarkPapers.swift */; };
+		7234B5CB26A721680000ABD4 /* MarkPaperRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7234B5CA26A721680000ABD4 /* MarkPaperRow.swift */; };
 		72449D292692F39200F07A74 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72449D282692F39200F07A74 /* Extension.swift */; };
 		72544BF12692E654004F4E45 /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72544BF02692E654004F4E45 /* StartView.swift */; };
 		728E1EB0268F026500EC401C /* SeaTurtleSenseiApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 728E1EAF268F026500EC401C /* SeaTurtleSenseiApp.swift */; };
@@ -73,6 +75,8 @@
 		720BACD82698B15D0016391B /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 		7221254126A028B2000A6495 /* Books.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Books.swift; sourceTree = "<group>"; };
 		7234711726945529007C8CCB /* Step2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Step2.swift; sourceTree = "<group>"; };
+		7234B5C826A71E6F0000ABD4 /* MarkPapers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkPapers.swift; sourceTree = "<group>"; };
+		7234B5CA26A721680000ABD4 /* MarkPaperRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkPaperRow.swift; sourceTree = "<group>"; };
 		72449D282692F39200F07A74 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		72544BF02692E654004F4E45 /* StartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartView.swift; sourceTree = "<group>"; };
 		728E1EAC268F026500EC401C /* SeaTurtleSensei.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SeaTurtleSensei.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -155,6 +159,8 @@
 				5DA7ABAD26A4226A0074BC3F /* SetQuestion.swift */,
 				5D916D3E26A2E7610019F4CA /* DatePicker.swift */,
 				5DA7ABA926A4202F0074BC3F /* SetTest.swift */,
+				7234B5C826A71E6F0000ABD4 /* MarkPapers.swift */,
+				7234B5CA26A721680000ABD4 /* MarkPaperRow.swift */,
 				728E1EB3268F026600EC401C /* Assets.xcassets */,
 				728E1EB8268F026600EC401C /* Info.plist */,
 				728E1EB5268F026600EC401C /* Preview Content */,
@@ -321,6 +327,7 @@
 			files = (
 				720BACD92698B15D0016391B /* Login.swift in Sources */,
 				728E1EB2268F026500EC401C /* ContentView.swift in Sources */,
+				7234B5CB26A721680000ABD4 /* MarkPaperRow.swift in Sources */,
 				5DA7ABAA26A4202F0074BC3F /* SetTest.swift in Sources */,
 				728E1EB0268F026500EC401C /* SeaTurtleSenseiApp.swift in Sources */,
 				5DA7ABAE26A4226A0074BC3F /* SetQuestion.swift in Sources */,
@@ -330,6 +337,7 @@
 				58C2ECBE269B2CEA0049AD45 /* Account.swift in Sources */,
 				58C2ECBC269B2CB20049AD45 /* SetupExam.swift in Sources */,
 				7234711826945529007C8CCB /* Step2.swift in Sources */,
+				7234B5C926A71E6F0000ABD4 /* MarkPapers.swift in Sources */,
 				584EAAB22699E4670038D284 /* Home.swift in Sources */,
 				58C2ECB8269B26FE0049AD45 /* SignUp.swift in Sources */,
 				7221254226A028B2000A6495 /* Books.swift in Sources */,

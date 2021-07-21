@@ -9,11 +9,17 @@ import SwiftUI
 
 struct Login: View {
     
-    //老師帳號
+    //帳號
     @State private var email = ""
     
-    //老師密碼
+    //密碼
     @State private var pwd = ""
+    
+    //確認正確失敗
+    @State var TrueFalse: Bool = false
+    
+    let testEmail = "test@test.com"
+    let testPasswer = "123456"
     
     var body: some View {
         ZStack{
@@ -40,8 +46,9 @@ struct Login: View {
                     .frame(width: 231.79, height: 108.5)
                     .scaledToFit()
                     .padding(0)
-                
                 VStack{
+                    
+                    //輸入帳號
                     TextField("Email", text: $email)
                         .foregroundColor(Color(hex: "1A90AA"))
                         .padding()
@@ -55,6 +62,7 @@ struct Login: View {
                         .frame(width: 310, height: 40, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                         .padding()
                     
+                    //輸入密碼
                     SecureField("Password", text: $pwd)
                         .foregroundColor(Color(hex: "1A90AA"))
                         .padding()
@@ -68,21 +76,40 @@ struct Login: View {
                         .padding(10)
                 }.offset(x: 0, y: 55)
                 
+                if TrueFalse {
+                    Text("帳號密碼錯誤")
+                        .foregroundColor(.red).offset(y:60)
+                }
+                
+                
                 VStack{
                     NavigationLink(
-                        destination: Home()){
+                        destination: Home(),isActive: $TrueFalse){
+                        
+                    }
+                    Button(action: {
+                        if self.email == testEmail && self.pwd == testPasswer {
+                            self.TrueFalse = false
+                        } else {
+                            self.TrueFalse = true
+                        }
+                        
+                    }, label: {
                         Text("Login")
-                            .frame(width: 140, height: 40, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                            .frame(width: 140, height: 40, alignment: .center)
                             .foregroundColor(.white)
-                            .background(RoundedRectangle(cornerRadius:30).foregroundColor(Color(hex: "07A9B4")))
-                   }.offset(x: 0, y: 65).padding(5)
+                            .background(RoundedRectangle(cornerRadius:30)
+                                            .foregroundColor(Color(hex: "07A9B4")))
+                    })
+                    
                     
                     NavigationLink(
                          destination: SignUp()){
-                        Text("Sign up")
+                            Text("Sign up")
                             .frame(width: 140, height: 40, alignment: .center)
                             .foregroundColor(Color(hex: "07A9B4"))
-                            .overlay(RoundedRectangle(cornerRadius: 30).stroke(Color(hex: "07A9B4"), lineWidth: 2)
+                            .overlay(RoundedRectangle(cornerRadius: 30)
+                            .stroke(Color(hex: "07A9B4"), lineWidth: 2)
                             )
                     }.offset(x: 0, y: 75)
                 }

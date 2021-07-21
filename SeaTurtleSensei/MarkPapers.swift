@@ -12,7 +12,7 @@ struct MarkPapers: View {
     
 
     @State var TestTitle : [TestName] = []
-    var Name = [TestName(name: "系統程式第一次小考"),TestName(name: "系統程式第二次小考")]
+    var Name = [TestName(name: "系統程式第一次小考", Number: 1), TestName(name: "系統程式第二次小考", Number: 2)]
     
     var body: some View {
         

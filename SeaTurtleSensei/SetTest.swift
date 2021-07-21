@@ -44,7 +44,7 @@ struct SetTest: View {
                         .offset(x: 20, y: 185)
                         .stroke(Color(hex: "1A90AA"), lineWidth:2)
                 VStack{
-                    TextField("輸入試卷名稱", text: $testname)
+                    TextField("輸入測驗名稱", text: $testname)
                         .foregroundColor(Color(hex: "1A90AA"))
                         .padding()
                         .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color(hex: "1A90AA"), lineWidth: 1)
@@ -57,7 +57,7 @@ struct SetTest: View {
                         .frame(width: 250, height: 40, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                         .padding()
                     
-                    TextField("輸入試卷總分", text: $total)
+                    TextField("輸入測驗總分", text: $total)
                         .foregroundColor(Color(hex: "1A90AA"))
                         .padding()
                         .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color(hex: "1A90AA"), lineWidth: 1)
@@ -69,7 +69,7 @@ struct SetTest: View {
                         .frame(width: 250, height: 40, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                         .padding()
                     
-                    TextField("輸入試卷題目設定", text: $setting)
+                    TextField("輸入測驗題目設定", text: $setting)
                         .foregroundColor(Color(hex: "1A90AA"))
                         .padding()
                         .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color(hex: "1A90AA"), lineWidth: 1)

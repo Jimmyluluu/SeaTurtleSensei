@@ -15,7 +15,7 @@ struct MarkPapers: View {
     //@State var item: [Item] = []
     @State var TestTitle : [TestName] = []
     var Name = ["3/31系統程式第一次小考","4/17系統程式第二次小考"]
-    let names = [
+    @State var names = [
         "1",
         "2",
         "3"
@@ -26,22 +26,26 @@ struct MarkPapers: View {
         ZStack{
             VStack{
                 Text("考卷清單")
-                        .frame(width: 140, height: 40, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/).foregroundColor(Color(hex: "028294")).background(RoundedRectangle(cornerRadius:30).foregroundColor(Color(hex: "FFE1EA")))
-                List (Name, id: \.self, selection: $selection){ name in
-                   NavigationLink(
-                    destination: QuestionList(),
-                        label: {
-                            Text(name).background(Color(hex: "DEF9FF"))
-                    })
-                 
-                    .navigationTitle("List Selection").toolbar(content: {
-                            EditButton()
-                    })
+                    .frame(width: 140, height: 40, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                    .foregroundColor(Color(hex: "028294"))
+                    .background(RoundedRectangle(cornerRadius:30)
+                    .foregroundColor(Color(hex: "FFE1EA")))
+                
+                List {
+                    ForEach(Name, id: \.self) {name in
+                        NavigationLink(
+                        destination: QuestionList(),
+                            label: {
+                                Text(name).background(Color(hex: "DEF9FF"))
+                            })
+                    }
+    
                 }
             }
         }
     }
 }
+
 
 struct MarkPapers_Previews: PreviewProvider {
     static var previews: some View {

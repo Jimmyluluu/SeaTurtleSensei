@@ -14,12 +14,7 @@ struct MarkPapers: View {
     @State var selection: Set<String> = []
     //@State var item: [Item] = []
     @State var TestTitle : [TestName] = []
-    var Name = ["3/31系統程式第一次小考","4/17系統程式第二次小考"]
-    @State var names = [
-        "1",
-        "2",
-        "3"
-    ]
+    var Name = [TestName(name: "系統程式第一次小考"),TestName(name: "系統程式第二次小考")]
     
     var body: some View {
         
@@ -31,15 +26,11 @@ struct MarkPapers: View {
                     .background(RoundedRectangle(cornerRadius:30)
                     .foregroundColor(Color(hex: "FFE1EA")))
                 
-                List {
-                    ForEach(Name, id: \.self) {name in
-                        NavigationLink(
-                        destination: QuestionList(),
-                            label: {
-                                Text(name).background(Color(hex: "DEF9FF"))
-                            })
-                    }
-    
+                List(Name) { name in
+                    NavigationLink(
+                        destination: QuestionList(Test: name)){
+                        MarkPaperRow(Test: name)
+                    }.background(Color(hex: "DEF9FF"))
                 }
             }
         }

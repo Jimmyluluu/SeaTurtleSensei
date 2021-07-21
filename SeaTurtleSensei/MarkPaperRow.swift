@@ -14,4 +14,17 @@ struct TestName :Identifiable {
     var name: String
 }
 
-
+struct MarkPaperRow: View {
+    
+    var Test: TestName
+    
+    var body: some View {
+        HStack {
+            VStack(alignment: .leading) {
+                Text(Test.name).background(Color(hex: "DEF9FF"))
+            }
+        }
+        Spacer()
+    }
+    
+}

@@ -8,82 +8,94 @@
 import SwiftUI
 
 struct SetQuestion: View {
-    @State private var type = ""
-    @State private var narrate = ""
+    @State private var item = ""
+    @State private var detail = ""
+    @State private var selection = 1
     var body: some View {
         ZStack {
-            Color(hex:"52A8D2").edgesIgnoringSafeArea(.all)
+            Color(hex:"1A90AA").edgesIgnoringSafeArea(.all)
+            Image("wave")
+                .offset(x: -10, y: 330)
+            
             Text("Sea Turtle Sensei")
                 .fontWeight(.bold)
-                .font(.system(size: 18))
+                .font(.system(size: 20))
                 .foregroundColor(.white)
-                .frame(width: 150, height: 100)
-                .offset(x: -60, y: -240)
-            Circle()
-                .offset(x: 100, y: -248)
-                .foregroundColor(Color(hex: "1A469C"))
-                .frame(width: 60, height: 60, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-            Image("LittleLogo")
-                .offset(x: 100, y: -250)
+                .offset(x: 0, y: -350)
             
-            
-            Text("新增題目")
-                .foregroundColor(Color(hue: 0.513, saturation: 0.952, brightness: 0.834))
-                .offset(x: 0, y: -160)
-                .frame(width: 300, height: 400)
-                .background(Color.white)
-                .cornerRadius(30)
-            Path{path in
-                    path.move(to: CGPoint(x:10, y:30))
-                    path.addLine(to: CGPoint(x:270, y:30))
-                }
-                    .offset(x: 20, y: 110)
-                    .stroke(Color(hue: 0.513, saturation: 0.952, brightness: 0.834), lineWidth:3)
-            VStack{
-                TextField("                 選擇題型", text: $type)
-                    .foregroundColor(Color(hex: "1A90AA"))
-                    .padding()
-                    .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color(hex: "1A90AA"), lineWidth: 1)
-                    )
-                    .background(
-                        RoundedRectangle(cornerRadius: 10)
-                            .foregroundColor(.white)
-                    )
-                    .autocapitalization(.none)
-                    .frame(width: 250, height: 40, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                    .padding()
+            ZStack{
+                RoundedRectangle(cornerRadius: 25)
+                    .fill(Color(hex: "FFFFF"))
+                    .frame(width: 350, height: 450)
+                    .opacity(0.5)
+                    .shadow(color: .gray, radius: 2, x: 3, y: 3)
                 
-                SecureField("             輸入題目敘述", text: $narrate)
+                Text("新增考試卷")
                     .foregroundColor(Color(hex: "1A90AA"))
-                    .padding()
-                    .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color(hex: "1A90AA"), lineWidth: 1)
-                    )
-                    .background(
-                        RoundedRectangle(cornerRadius: 10)
+                    .offset(x: 0, y: -160)
+                    .font(.system(size: 20))
+                    .frame(width: 350, height: 380)
+                    .background(Color.white)
+            
+                Path{path in
+                        path.move(to: CGPoint(x:80, y:30))
+                        path.addLine(to: CGPoint(x:290, y:30))
+                    }
+                        .offset(x: 20, y: 215)
+                        .stroke(Color(hex: "1A90AA"), lineWidth:2)
+                VStack{
+                    VStack {
+                        Picker(selection: $selection, label: Text("選擇題型")) {
+                            Text("單選題").tag(1)
+                            Text("多選題").tag(2)
+                        }
+                    }.offset(x: 0, y: -40)
+//                    TextField("選擇題型", text: $item)
+//                        .foregroundColor(Color(hex: "1A90AA"))
+//                        .padding()
+//                        .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color(hex: "1A90AA"), lineWidth: 1)
+//                        )
+//                        .background(
+//                            RoundedRectangle(cornerRadius: 10)
+//                                .foregroundColor(.white)
+//                        )
+//                        .autocapitalization(.none)
+//                        .frame(width: 250, height: 40, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+//                        .padding(20)
+                    
+                    TextField("輸入題目敘述", text: $detail)
+                        .foregroundColor(Color(hex: "1A90AA"))
+                        .padding()
+                        .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color(hex: "1A90AA"), lineWidth: 1)
+                        )
+                        .frame(width: 250, height: 45, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                        .background(
+                            RoundedRectangle(cornerRadius: 10)
+                                .foregroundColor(.white)
+                        )
+                        
+                        .offset(x: 0, y: -100)
+                        .padding(20)
+                }.offset(x: 0, y: -10)
+                
+                NavigationLink(
+                    destination: Home()){
+                        Text("FINISH")
+                            .frame(width: 120, height: 40, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                             .foregroundColor(.white)
-                    )
-                    .frame(width: 250, height: 40, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                    .padding(10)
-            }.offset(x: 0, y: -30)
-            
-            NavigationLink(
-                destination: Home()){
-                    Text("FINISH")
-                        .frame(width: 140, height: 40, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                        .foregroundColor(.white)
-                        .background(RoundedRectangle(cornerRadius:10).foregroundColor(Color(hex: "F3B1C5")))
-                }
-                .offset(x: 0, y: 120)
-            .padding(5)
-            
-            
+                            .background(RoundedRectangle(cornerRadius: 20).foregroundColor(Color(hex: "FB93B2")))
+                    }
+                    .offset(x: 0, y: 130)
+                    .padding(5)
+            }.offset(x: 0, y: -40)
         }
     }
 }
 
-struct SetQuestion_Previews: PreviewProvider {
+struct SetQuestionPreviews: PreviewProvider {
     static var previews: some View {
         SetQuestion()
     }
 }
+
 

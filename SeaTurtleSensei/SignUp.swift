@@ -33,12 +33,14 @@ struct SignUp: View {
                         .fill(Color(hex: "FFFFF"))
                         .frame(width: 390, height: 740)
                         .offset(x: 0, y: 50)
-                    Text("註冊 Sign Up")
-                        .bold()
-                        .foregroundColor(Color(hex: "1A90AA"))
-                        .font(.system(size: 20))
-                        .offset(x: 0, y: -290)
+                    
                     VStack{
+                        Text("註冊 Sign Up")
+                            .bold()
+                            .foregroundColor(Color(hex: "1A90AA"))
+                            .font(.system(size: 20))
+                            .offset(x: 0, y: -10)
+                        
                         TextField("Name", text: $teachername)
                             .foregroundColor(Color(hex: "1A90AA"))
                             .padding()
@@ -145,8 +147,8 @@ struct SignUp: View {
                                     .fontWeight(.medium)
                                     .foregroundColor(Color(hex: "07A9B4"))
                             }
-                        }.offset(x: 0, y: 30)
-                    }.offset(x: 0, y: 35)
+                        }.offset(x: 0, y: 30)  //底下的already account
+                    }.offset(x: 0, y: 35)  //輸入欄
                 }
             }
         }

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		584EAAB22699E4670038D284 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584EAAB12699E4670038D284 /* Home.swift */; };
+		5871A65A26A864810072D48B /* ManageTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5871A65926A864810072D48B /* ManageTest.swift */; };
 		58C2ECB8269B26FE0049AD45 /* SignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C2ECB7269B26FE0049AD45 /* SignUp.swift */; };
 		58C2ECBA269B2C120049AD45 /* Schedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C2ECB9269B2C120049AD45 /* Schedule.swift */; };
 		58C2ECBC269B2CB20049AD45 /* SetupExam.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C2ECBB269B2CB20049AD45 /* SetupExam.swift */; };
@@ -61,6 +62,7 @@
 
 /* Begin PBXFileReference section */
 		584EAAB12699E4670038D284 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
+		5871A65926A864810072D48B /* ManageTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageTest.swift; sourceTree = "<group>"; };
 		58C2ECB7269B26FE0049AD45 /* SignUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUp.swift; sourceTree = "<group>"; };
 		58C2ECB9269B2C120049AD45 /* Schedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Schedule.swift; sourceTree = "<group>"; };
 		58C2ECBB269B2CB20049AD45 /* SetupExam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupExam.swift; sourceTree = "<group>"; };
@@ -157,10 +159,11 @@
 				58C2ECC1269B2D8D0049AD45 /* CheckGrade.swift */,
 				58C2ECBD269B2CEA0049AD45 /* Account.swift */,
 				58C2ECC3269FF8D30049AD45 /* BeginTest.swift */,
+				5871A65926A864810072D48B /* ManageTest.swift */,
 				58C2ECC526A014EF0049AD45 /* Test.swift */,
+				5DA7ABA926A4202F0074BC3F /* SetTest.swift */,
 				5DA7ABAD26A4226A0074BC3F /* SetQuestion.swift */,
 				5D916D3E26A2E7610019F4CA /* DatePicker.swift */,
-				5DA7ABA926A4202F0074BC3F /* SetTest.swift */,
 				7234B5C826A71E6F0000ABD4 /* MarkPapers.swift */,
 				7234B5CC26A7FAB10000ABD4 /* QuestionList.swift */,
 				7234B5CA26A721680000ABD4 /* MarkPaperRow.swift */,
@@ -332,6 +335,7 @@
 				728E1EB2268F026500EC401C /* ContentView.swift in Sources */,
 				7234B5CB26A721680000ABD4 /* MarkPaperRow.swift in Sources */,
 				5DA7ABAA26A4202F0074BC3F /* SetTest.swift in Sources */,
+				5871A65A26A864810072D48B /* ManageTest.swift in Sources */,
 				728E1EB0268F026500EC401C /* SeaTurtleSenseiApp.swift in Sources */,
 				5DA7ABAE26A4226A0074BC3F /* SetQuestion.swift in Sources */,
 				72544BF12692E654004F4E45 /* StartView.swift in Sources */,

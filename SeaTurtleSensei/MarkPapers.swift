@@ -10,9 +10,7 @@ import UIKit
 
 struct MarkPapers: View {
     
-    
-    @State var selection: Set<String> = []
-    //@State var item: [Item] = []
+
     @State var TestTitle : [TestName] = []
     var Name = [TestName(name: "系統程式第一次小考"),TestName(name: "系統程式第二次小考")]
     

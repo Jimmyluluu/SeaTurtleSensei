@@ -39,7 +39,7 @@ struct Home: View {
                                 .background(RoundedRectangle(cornerRadius:30).foregroundColor(Color(hex: "B9D3DA")))
                         }
                         NavigationLink(
-                            destination: CorrectPaper()){
+                            destination: MarkPapers()){
                             Text("批改考卷")
                                 .frame(width: 120, height: 35, alignment: .center)
                                 .foregroundColor(.white)
@@ -105,7 +105,7 @@ struct Home: View {
                         //批改考卷
                         ZStack{
                             NavigationLink(
-                                destination: CorrectPaper()){
+                                destination: MarkPapers()){
                                 RoundedRectangle(cornerRadius: 20, style: .continuous)
                                     .fill(Color(hex: "3DBAD6"))
                                     .frame(width: 350, height: 145, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)

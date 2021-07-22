@@ -49,7 +49,7 @@ struct SetQuestion: View {
                             .foregroundColor(.white)
                             .frame(width: 350, height: 990, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                             .offset(x: 0, y: 20)
-                        Text("新增考試卷")
+                        Text("新增題目")
                             .foregroundColor(Color(hex: "1A90AA"))
                             .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
                             .offset(x: 0, y: -450)
@@ -68,80 +68,43 @@ struct SetQuestion: View {
                             VStack {
                                 Text("選擇題型")
                                     .background(Color(.white))
-                                    .offset(x: 0, y: 110)
+                                    .offset(x: -90, y: 143)
                                 Picker(selection: $selection, label: Text("選擇題型")) {
                                     Text("單選題").tag(1)
                                     Text("多選題").tag(2)
-                                }.offset(x: 0, y: 30)
-                            }.offset(x: 0, y: -300)
-                            
-                            //輸入題目題號
-                            TextField("輸入題目題號", text: $qnum)
-                                .foregroundColor(Color(hex: "1A90AA"))
-                                .padding()
-                                .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color(hex: "1A90AA"), lineWidth: 1)
-                                )
-                                .frame(width: 250, height: 45, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                                .background(
-                                    RoundedRectangle(cornerRadius: 10)
-                                        .foregroundColor(.white)
-                                )
-                                .offset(x: 0, y: -370)
-                                .padding(10)
-                            
-                            //輸入題目選項數
-                            TextField("輸入題目選項數量", text: $inum)
-                                .foregroundColor(Color(hex: "1A90AA"))
-                                .padding()
-                                .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color(hex: "1A90AA"), lineWidth: 1)
-                                )
-                                .frame(width: 250, height: 45, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                                .background(
-                                    RoundedRectangle(cornerRadius: 10)
-                                        .foregroundColor(.white)
-                                )
-                                .offset(x: 0, y: -370)
-                                .padding(10)
-                            
-                            //輸入題目選項配分
-                            TextField("輸入題目選項配分", text: $qgrade)
-                                .foregroundColor(Color(hex: "1A90AA"))
-                                .padding()
-                                .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color(hex: "1A90AA"), lineWidth: 1)
-                                )
-                                .frame(width: 250, height: 45, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                                .background(
-                                    RoundedRectangle(cornerRadius: 10)
-                                        .foregroundColor(.white)
-                                )
-                                .offset(x: 0, y: -370)
-                                .padding(10)
+                                    Text("填充題").tag(3)
+                                }
+                                .frame(width: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                                .offset(x: 0, y: 70)
+                            }.offset(x: 0, y: -360)
                             
                             //輸入題目敘述
-                            TextField("輸入題目敘述", text: $detail)
-                                .foregroundColor(Color(hex: "1A90AA"))
-                                .padding()
-                                .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color(hex: "1A90AA"), lineWidth: 1)
-                                )
-                                .frame(width: 250, height: 45, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                                .background(
-                                    RoundedRectangle(cornerRadius: 10)
-                                        .foregroundColor(.white)
-                                )
-                                .offset(x: 0, y: -370)
-                                .padding(10)
-                            
-                            //完成出題，跳出完成出題視窗，即返回首頁
-                            NavigationLink(
-                                destination: Home()){
-                                    Text("FINISH")
-                                        .frame(width: 120, height: 40, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                                        .foregroundColor(.white)
-                                        .background(RoundedRectangle(cornerRadius: 20).foregroundColor(Color(hex: "FB93B2")))
+                            VStack {
+                                  Text("Testing Placeholder Example")
+                                  ZStack(alignment: Alignment(horizontal: .center, vertical: .top)) {
+                                    TextEditor(text: $detail)
+                                      .padding(EdgeInsets(top: -7, leading: -4, bottom: -7, trailing: -4)) // fix padding not aligning with TextField
+                                    if detail.isEmpty {
+                                      TextField("Placeholder text here", text: $detail)
+                                        .disabled(true) // don't allow for it to be tapped
+                                    
+                                  }
                                 }
-                                .padding(5)
+                              }
+                            
+                            VStack{
+                                NavigationLink(
+                                    destination: Home()){
+                                        Text("FINISH")
+                                            .frame(width: 120, height: 40, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                                            .foregroundColor(.white)
+                                            .background(RoundedRectangle(cornerRadius: 20).foregroundColor(Color(hex: "FB93B2")))
+                                    }
+                                    .padding(5)
+                            }.offset(x: 0, y: 80)  //題型以下的vstack
+                            
                         }.offset(x: 0, y: 80)  //新增考卷以下的vstack
-                    }.offset(x: 0, y: 55)  //zstack
+                    }.offset(x: 0, y: 60)  //zstack
                 }  //vstack
             }  //scrollview
         }

@@ -19,7 +19,8 @@ struct Login: View {
     @State var TrueFalse: Bool = false
     @State var attemptingLogin: Bool  = true
     
-    let testEmail = "test@test.com"
+    //測試用帳號密碼
+    let testEmail = "test"
     let testPasswer = "123456"
     
     var body: some View {

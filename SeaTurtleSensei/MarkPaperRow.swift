@@ -27,10 +27,14 @@ func Connect() {
         print("Invalid URL")
         return
     }
+    
     let request = URLRequest(url: url)
-    URLSession.shared.dataTask(with: request) {
+    
+    let dataTask = URLSession.shared.dataTask(with: request) {
         data,respone, error in
-    }.resume()
+    }
+
+    dataTask.resume()
 }
 
 

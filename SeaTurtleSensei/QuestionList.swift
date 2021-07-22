@@ -12,7 +12,18 @@ struct QuestionList: View {
     
     var body: some View {
         VStack {
-            Text(Test.name).font(.title)
+            if Test.name == "系統程式第一次小考" {
+                
+                ZStack {
+                    
+                    SetTest()
+                    Text(Test.name).font(.title)
+                }
+            }
+            else {
+                Text(Test.name).font(.title)
+                SetTest()
+            }
             Spacer()
         }
     }

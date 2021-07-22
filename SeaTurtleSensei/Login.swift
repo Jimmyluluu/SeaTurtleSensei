@@ -17,6 +17,7 @@ struct Login: View {
     
     //確認正確失敗
     @State var TrueFalse: Bool = false
+    @State var attemptingLogin: Bool  = true
     
     let testEmail = "test@test.com"
     let testPasswer = "123456"
@@ -76,7 +77,7 @@ struct Login: View {
                         .padding(10)
                 }.offset(x: 0, y: 55)
                 
-                if TrueFalse {
+                if attemptingLogin == false {
                     Text("帳號密碼錯誤")
                         .foregroundColor(.red).offset(y:60)
                 }
@@ -84,24 +85,26 @@ struct Login: View {
                 
                 VStack{
                     NavigationLink(
-                        destination: Home(),isActive: $TrueFalse){
+                        destination: Home(),isActive : $TrueFalse) {
+                        Button(action: {
+                            attemptingLogin = true
+                            if self.email == testEmail && self.pwd == testPasswer {
+                                self.TrueFalse = true
+                            }
+                            else {
+                                self.attemptingLogin = false
+                            }
+                        }, label: {
+                            Text("Login")
+                                .frame(width: 140, height: 40, alignment: .center)
+                                .foregroundColor(.white)
+                                .background(RoundedRectangle(cornerRadius:30)
+                                                .foregroundColor(Color(hex: "07A9B4")))
+                        })
+                            
+                        }.offset(x: 0, y: 65).padding(5)
                         
-                    }
-                    Button(action: {
-                        if self.email == testEmail && self.pwd == testPasswer {
-                            self.TrueFalse = false
-                        } else {
-                            self.TrueFalse = true
-                        }
-                        
-                    }, label: {
-                        Text("Login")
-                            .frame(width: 140, height: 40, alignment: .center)
-                            .foregroundColor(.white)
-                            .background(RoundedRectangle(cornerRadius:30)
-                                            .foregroundColor(Color(hex: "07A9B4")))
-                    })
-                    
+                 
                     
                     NavigationLink(
                          destination: SignUp()){

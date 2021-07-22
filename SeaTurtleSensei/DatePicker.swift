@@ -9,74 +9,76 @@ import SwiftUI
 
 struct DatePicker: View {
     @State private var item = ""
-    @State private var time = ""
+    @State private var date = ""
     var body: some View {
         ZStack {
-            Color(hex:"0296B7").edgesIgnoringSafeArea(.all)
+            Color(hex:"1A90AA").edgesIgnoringSafeArea(.all)
+            Image("wave")
+                .offset(x: -10, y: 330)
+            
             Text("Sea Turtle Sensei")
                 .fontWeight(.bold)
-                .font(.system(size: 18))
+                .font(.system(size: 20))
                 .foregroundColor(.white)
-                .frame(width: 150, height: 100)
-                .offset(x: -60, y: -240)
-            Circle()
-                .offset(x: 100, y: -248)
-                .foregroundColor(Color(hex: "1A469C"))
-                .frame(width: 60, height: 60, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-            Image("LittleLogo")
-                .offset(x: 100, y: -250)
+                .offset(x: 0, y: -350)
             
-            
-            Text("新增行事曆")
-                .foregroundColor(Color(hue: 0.513, saturation: 0.952, brightness: 0.834))
-                .offset(x: 0, y: -160)
-                .frame(width: 300, height: 400)
-                .background(Color.white)
-                .cornerRadius(30)
-            Path{path in
-                    path.move(to: CGPoint(x:10, y:30))
-                    path.addLine(to: CGPoint(x:270, y:30))
-                }
-                    .offset(x: 20, y: 110)
-                    .stroke(Color(hue: 0.513, saturation: 0.952, brightness: 0.834), lineWidth:3)
-            VStack{
-                TextField("                 輸入事項", text: $item)
-                    .foregroundColor(Color(hex: "1A90AA"))
-                    .padding()
-                    .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color(hex: "1A90AA"), lineWidth: 1)
-                    )
-                    .background(
-                        RoundedRectangle(cornerRadius: 10)
-                            .foregroundColor(.white)
-                    )
-                    .autocapitalization(.none)
-                    .frame(width: 250, height: 40, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                    .padding()
+            ZStack{
+                RoundedRectangle(cornerRadius: 25)
+                    .fill(Color(hex: "FFFFF"))
+                    .frame(width: 330, height: 400)
+                    .opacity(0.5)
+                    .shadow(color: .gray, radius: 2, x: 3, y: 3)
                 
-                SecureField("                 輸入時間", text: $time)
+                Text("新增行事曆")
                     .foregroundColor(Color(hex: "1A90AA"))
-                    .padding()
-                    .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color(hex: "1A90AA"), lineWidth: 1)
-                    )
-                    .background(
-                        RoundedRectangle(cornerRadius: 10)
+                    .offset(x: 0, y: -150)
+                    .font(.system(size: 20))
+                    .frame(width: 330, height: 350)
+                    .background(Color.white)
+            
+                Path{path in
+                        path.move(to: CGPoint(x:80, y:30))
+                        path.addLine(to: CGPoint(x:290, y:30))
+                    }
+                        .offset(x: 20, y: 225)
+                        .stroke(Color(hex: "1A90AA"), lineWidth:2)
+                VStack{
+                    TextField("輸入測驗名稱", text: $item)
+                        .foregroundColor(Color(hex: "1A90AA"))
+                        .padding()
+                        .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color(hex: "1A90AA"), lineWidth: 1)
+                        )
+                        .background(
+                            RoundedRectangle(cornerRadius: 10)
+                                .foregroundColor(.white)
+                        )
+                        .autocapitalization(.none)
+                        .frame(width: 250, height: 40, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                        .padding()
+                    
+                    TextField("輸入測驗日期", text: $date)
+                        .foregroundColor(Color(hex: "1A90AA"))
+                        .padding()
+                        .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color(hex: "1A90AA"), lineWidth: 1)
+                        )
+                        .background(
+                            RoundedRectangle(cornerRadius: 10)
+                                .foregroundColor(.white)
+                        )
+                        .frame(width: 250, height: 40, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                        .padding()
+                }.offset(x: 0, y: -20)
+                
+                NavigationLink(
+                    destination: Home()){
+                        Text("FINISH")
+                            .frame(width: 120, height: 40, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                             .foregroundColor(.white)
-                    )
-                    .frame(width: 250, height: 40, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                    .padding(10)
-            }.offset(x: 0, y: -30)
-            
-            NavigationLink(
-                destination: Home()){
-                    Text("ENTER")
-                        .frame(width: 140, height: 40, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                        .foregroundColor(.white)
-                        .background(RoundedRectangle(cornerRadius:10).foregroundColor(Color(hex: "F3B1C5")))
-                }
-                .offset(x: 0, y: 120)
-            .padding(5)
-            
-            
+                            .background(RoundedRectangle(cornerRadius: 20).foregroundColor(Color(hex: "FB93B2")))
+                    }
+                    .offset(x: 0, y: 110)
+                    .padding(5)
+            }.offset(x: 0, y: -40)
         }
     }
 }

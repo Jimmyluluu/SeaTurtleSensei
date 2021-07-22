@@ -69,17 +69,6 @@ struct SetTest: View {
                         .frame(width: 250, height: 40, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                         .padding()
                     
-                    TextField("輸入測驗題目設定", text: $setting)
-                        .foregroundColor(Color(hex: "1A90AA"))
-                        .padding()
-                        .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color(hex: "1A90AA"), lineWidth: 1)
-                        )
-                        .background(
-                            RoundedRectangle(cornerRadius: 10)
-                                .foregroundColor(.white)
-                        )
-                        .frame(width: 250, height: 40, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                        .padding()
                 }.offset(x: 0, y: -20)
                 
                 NavigationLink(

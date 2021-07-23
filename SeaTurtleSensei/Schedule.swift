@@ -7,54 +7,71 @@
 
 import SwiftUI
 
-struct Location: Identifiable {
-    let id: String
-    let name: String
-
-    init(uuid: () -> String = { UUID().uuidString }, name: String) {
-        self.id = uuid()
-        self.name = name
-    }
+struct IdentifiableGameResult: Identifiable {
+    var id = UUID()
+    var score: Int
 }
 
 struct Schedule: View {
 
-    let locations: [Location] = [
-        Location(name: "彰化"),
-        Location(name: "台中"),
-        Location(name: "南投"),
-    ]
+    // 輸入題目選項數量
+    @State private var totalitem = ""
 
+    //選項數量
+    @State private var total = 0
+    
+    //選項內容
+    @State private var content = ""
+
+    
+    @State var text: String = ""
+    
+    @State private var name = ""
+    
+    
+    let results = [
+            IdentifiableGameResult(score: 1),
+            IdentifiableGameResult(score: 2),
+            IdentifiableGameResult(score: 3),
+            IdentifiableGameResult(score: 4),
+            IdentifiableGameResult(score: 5)
+        ]
+    
     var body: some View {
-        VStack {
-            HStack {
-                Text("中部")
-                    .font(.title)
-                    .fontWeight(.heavy)
-                Spacer(minLength: 0)
-            }
-            .padding(.horizontal)
-            ScrollView {
-                VStack(spacing: 8) {
-                    ForEach(locations, id: \.id) { location in
-                        HStack {
-                            Image(systemName: "mappin")
-                                .font(.system(size: 19))
-                                .foregroundColor(.red)
-                                .padding()
-                            VStack(alignment: .leading, spacing: 8) {
-                                Text(location.name)
-                                Text(location.id)
-                                    .font(.caption)
-                                    .foregroundColor(Color.gray)
-                            }
-                            Spacer(minLength: 0)
-                        }
+        ScrollView(.vertical){
+            
+            TextField("幾個選項", text: $totalitem)
+                .frame(width: 300, height: 30)
+                .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color(hex: "1A90AA"), lineWidth: 1))
+            
+            Button("go") {
+                if let total = Int(totalitem) {
+                    for _ in 0 ... total {
+                        print("Number is \(self.totalitem)")
                     }
+                } else {
+                    print("not number")
                 }
-                .padding()
+            }.offset(x: 0, y: -10)
+            .padding()
+            
+            VStack {
+                VStack {
+                    ForEach(results) { result in
+                        VStack{
+                            Text("選項: \(result.score)")
+                                
+                            TextField("選項內容", text : $content)
+                                .padding()
+                                .frame(width: 300, height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                                .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color(hex: "1A90AA"), lineWidth: 1))
+                                .padding()
+                        }
+                    }  //foreach
+                }
             }
         }
+        
     }
 }
 

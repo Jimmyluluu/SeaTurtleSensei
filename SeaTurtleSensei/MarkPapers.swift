@@ -16,8 +16,8 @@ class TestName2: ObservableObject {
 struct MarkPapers: View {
     
     
-
-    @ObservedObject var Test: TestName2
+    @State var ShowingPopover = false
+    @StateObject var Test: TestName2
     
 
     var body: some View {
@@ -31,16 +31,32 @@ struct MarkPapers: View {
                     .background(RoundedRectangle(cornerRadius:30)
                     .foregroundColor(Color(hex: "FFE1EA")))
                 
-                List(Test.Name) { name in
-                    Section {
+                List() {
+                    ForEach(Test.Name) {name in
                         NavigationLink(
                             destination: QuestionList(Test: name)){
                             MarkPaperRow(Test: name)
                         }.background(Color(hex: "DEF9FF"))
                     }.listStyle(InsetGroupedListStyle())
                 }
+                Button(action: {
+                        ShowingPopover = true
+                    
+                }){
+                    Text("ADD")
+                        .frame(width: 120, height: 40, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                        .foregroundColor(.white)
+                        .background(RoundedRectangle(cornerRadius: 20).foregroundColor(Color(hex: "FB93B2")))
+                }.popover(isPresented: $ShowingPopover, content: {
+                    SetTest()
+                })
+                  
             }
         }
+    }
+    func pri() {
+        print("BB")
+        print(Test.Name)
     }
 }
 

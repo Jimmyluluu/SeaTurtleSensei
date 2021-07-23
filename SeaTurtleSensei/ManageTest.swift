@@ -37,12 +37,12 @@ struct ManageTest: View {
                 //新增考卷
 
                 ZStack{
-                    NavigationLink(destination:SetTest()){
+                    NavigationLink(destination:BeginTest()){
                         ZStack {
-                        RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/)
-                            .foregroundColor(Color(hex: "FFFFF"))
-                            .frame(width: 330, height: 110, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                            .shadow(color: .gray, radius: 2, x: 1, y: 1)
+                            RoundedRectangle(cornerRadius: 25.0)
+                                .foregroundColor(Color(hex: "FFFFF"))
+                                .frame(width: 330, height: 110, alignment: .center)
+                                .shadow(color: .gray, radius: 2, x: 1, y: 1)
                         RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/)
                             .frame(width: 140, height: 110, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                             .foregroundColor(Color(hex: "ACACAC")).offset(x: -95, y: 0)

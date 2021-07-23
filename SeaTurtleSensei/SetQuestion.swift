@@ -43,14 +43,16 @@ struct SetQuestion: View {
                         Group{
                             RoundedRectangle(cornerRadius: 25)
                                 .fill(Color(hex: "FFFFF"))
-                                .frame(width: 350, height: 1000)
+                                .frame(width: 350, height: 1900)
                                 .opacity(0.5)
                                 .shadow(color: .gray, radius: 2, x: 3, y: 3)
+                                .offset(x: 0, y: -30)
+                            
                             Rectangle()
                                 .foregroundColor(.white)
-                                .frame(width: 350, height: 990, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                                .offset(x: 0, y: 20)
-                        }.offset(x: 0, y: -87)
+                                .frame(width: 350, height: 1990, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                                .offset(x: 0, y: 40)
+                        }.offset(x: 0, y: -7)
                         
                         VStack{
                             Text("新增題目")
@@ -65,23 +67,22 @@ struct SetQuestion: View {
                                 }
                                 .offset(x: 20, y: 15)
                                 .stroke(Color(hex: "1A90AA"), lineWidth:2)
-                        
-                            
-                            //選擇題型
-                            VStack {
-                                Text("選擇題型")
-                                    .background(Color(.white))
-                                    .offset(x: -90, y: 143)
-                                Picker(selection: $selection, label: Text("選擇題型")) {
-                                    Text("單選題").tag(1)
-                                    Text("多選題").tag(2)
-                                    Text("填充題").tag(3)
-                                }
-                                .frame(width: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                                .offset(x: 0, y: 70)
-                            }.offset(x: 0, y: -500)
-                            
-                            VStack{
+                            //出題
+                            Group{
+                                //選擇題型
+                                VStack {
+                                    Text("選擇題型")
+                                        .background(Color(.white))
+                                        .offset(x: -90, y: 143)
+                                    Picker(selection: $selection, label: Text("選擇題型")) {
+                                        Text("單選題").tag(1)
+                                        Text("多選題").tag(2)
+                                        Text("填充題").tag(3)
+                                    }
+                                    .frame(width: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                                    .offset(x: 0, y: 70)
+                                }.offset(x: 0, y: -1080)
+                                
                                 //輸入題目敘述
                                 VStack {
                                     Text("題目:")
@@ -100,44 +101,51 @@ struct SetQuestion: View {
                                             .disabled(true)
                                         }
                                     }  //zstack
-                                }.offset(x: 0, y: 100)  //題目vstack
+                                }.offset(x: 0, y: -765)  //題目vstack
                                 
-                                HStack{
-                                    Text("總分：")
-                                        .font(.system(size: 20))
-                                        .offset(x: -110, y: -240)
+                                Group{
+                                    HStack{
+                                        Text("總分：")
+                                            .font(.system(size: 20))
+                                            .offset(x: -110, y: -240)
+                                        
+                                        TextField("輸入該題總分", text: $totalgrade)
+                                            .foregroundColor(Color(hex: "1A90AA"))
+                                            .padding(10)
+                                            .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color(hex: "1A90AA"), lineWidth: 1)
+                                            )
+                                            .background(
+                                                RoundedRectangle(cornerRadius: 10)
+                                                    .foregroundColor(.white)
+                                            )
+                                            .frame(width: 140, height: 40, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                                            .offset(x: -120, y: -240)
+                                    }.offset(x: 70, y: 0)
+                                    .padding(5)
                                     
-                                    TextField("輸入該題總分", text: $totalgrade)
-                                        .foregroundColor(Color(hex: "1A90AA"))
-                                        .padding(10)
-                                        .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color(hex: "1A90AA"), lineWidth: 1)
-                                        )
-                                        .background(
-                                            RoundedRectangle(cornerRadius: 10)
-                                                .foregroundColor(.white)
-                                        )
-                                        .frame(width: 140, height: 40, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                                        .offset(x: -120, y: -240)
-                                }.offset(x: 70, y: 105)
-                                
-                                HStack{
-                                    Text("選項數量：")
-                                        .font(.system(size: 20))
-                                        .offset(x: -100, y: -240)
-                                    
-                                    TextField("數字 1~5", text: $totalitem)
-                                        .foregroundColor(Color(hex: "1A90AA"))
-                                        .padding(10)
-                                        .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color(hex: "1A90AA"), lineWidth: 1)
-                                        )
-                                        .background(
-                                            RoundedRectangle(cornerRadius: 10)
-                                                .foregroundColor(.white)
-                                        )
-                                        .frame(width: 140, height: 40, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                                        .offset(x: -110, y: -240)
-                                }.offset(x: 80, y: 120)
-                                
+                                    HStack{
+                                        Text("選項數量：")
+                                            .font(.system(size: 20))
+                                            .offset(x: -100, y: -240)
+                                        
+                                        TextField("數字 1~5", text: $totalitem)
+                                            .foregroundColor(Color(hex: "1A90AA"))
+                                            .padding(10)
+                                            .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color(hex: "1A90AA"), lineWidth: 1)
+                                            )
+                                            .background(
+                                                RoundedRectangle(cornerRadius: 10)
+                                                    .foregroundColor(.white)
+                                            )
+                                            .frame(width: 140, height: 40, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                                            .offset(x: -110, y: -240)
+                                    }.offset(x: 80, y: 0)
+                                    .padding(5)
+                                }.offset(x: 0, y: -760)  //總分與選項數量group
+                            }.offset(x: 0, y:-200)
+                            
+                            
+                            VStack{
                                 
                                 //開始建立選項
                                 VStack{
@@ -146,34 +154,35 @@ struct SetQuestion: View {
                                         .frame(width: 130, height: 35, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                                         .background(RoundedRectangle(cornerRadius: 5).foregroundColor(Color(hex: "07A9B4")))
                                         .font(.system(size: 20))
-                                        .offset(x: 0, y: -10)
+                                        .offset(x: 0, y: -780)
                                         
-                                    ScrollView{
-                                            VStack{
-                                                ForEach(ContentArray.indices, id: \.self){index in
-                                                    ZStack{
-                                                    // Object
-                                                        Text(self.ContentArray[index])
-                                                        .frame(width:100,height:100)
-                                                        .background(Color.gray)
-                                                        .cornerRadius(20)
-                                                        .padding()
-                                                    //Delete button
-                                                        Button(action: {
-                                                          self.ContentArray.remove(at: index)
-                                                        }){
-                                                        Text("✕")
-                                                        .foregroundColor(.white)
-                                                        .frame(width:40,height:40)
-                                                        .background(Color.red)
-                                                        .cornerRadius(100)
-                                                       }.offset(x:40,y:-40)
-                                                 }
-                                               }
-                                             }
-                                           }
+//                                    ScrollView{
+//                                            VStack{
+//                                                ForEach(ContentArray.indices, id: \.self){index in
+//                                                    ZStack{
+//                                                    // Object
+//                                                        Text(self.ContentArray[index])
+//                                                        .frame(width:300,height:150)
+//                                                        .background(Color.gray)
+//                                                        .cornerRadius(20)
+//                                                        .padding()
+//                                                    //Delete button
+//                                                        Button(action: {
+//                                                          self.ContentArray.remove(at: index)
+//                                                        }){
+//                                                        Text("✕")
+//                                                        .foregroundColor(.white)
+//                                                        .frame(width:40,height:40)
+//                                                        .background(Color.red)
+//                                                        .cornerRadius(100)
+//                                                       }.offset(x:40,y:40)
+//                                                 }
+//                                               }
+//                                             }
+//                                    }
+//                                    .offset(x: 0, y: -480)  //scrollview
                                     
-                                }.offset(x: 0, y: -70)  //選項vstack
+                                }.offset(x: 0, y: -470)  //選項vstack
                                 
                                 
                                 VStack{

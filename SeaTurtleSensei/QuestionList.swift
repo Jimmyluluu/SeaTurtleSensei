@@ -13,16 +13,10 @@ struct QuestionList: View {
     var body: some View {
         VStack {
             if Test.name == "系統程式第一次小考" {
-                
-                ZStack {
-                    
-                    SetTest()
-                    Text(Test.name).font(.title)
-                }
+                ManageTest()
             }
             else {
-                Text(Test.name).font(.title)
-                SetTest()
+                ManageTest()
             }
             Spacer()
         }

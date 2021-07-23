@@ -8,9 +8,14 @@
 import SwiftUI
 
 struct SetTest: View {
+    
+    //新增考卷名稱
     @State private var testname = ""
+    //新增考卷總分
     @State private var total = ""
-    @State private var setting = ""
+    
+    @ObservedObject var AddData = TestName2()
+
     var body: some View {
         ZStack {
             Color(hex:"1A90AA").edgesIgnoringSafeArea(.all)
@@ -72,9 +77,11 @@ struct SetTest: View {
                 }.offset(x: 0, y: -20)
                 
                 NavigationLink(
-                    destination: Home()){
+                    destination: MarkPapers(Test: AddData).onAppear{
+                        self.add()
+                    }){
                         Text("FINISH")
-                            .frame(width: 120, height: 40, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                            .frame(width: 120, height: 40, alignment: .center)
                             .foregroundColor(.white)
                             .background(RoundedRectangle(cornerRadius: 20).foregroundColor(Color(hex: "FB93B2")))
                     }
@@ -82,6 +89,13 @@ struct SetTest: View {
                     .padding(5)
             }.offset(x: 0, y: -40)
         }
+    }
+    
+    func add() {
+        
+        print("apple")
+        AddData.Name.append(TestName(name: self.testname, Number: self.total))
+        print(AddData.Name)
     }
 }
 

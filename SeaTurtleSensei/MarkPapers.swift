@@ -8,13 +8,20 @@ import Foundation
 import SwiftUI
 import UIKit
 
+class TestName2: ObservableObject {
+    @Published var Name = [TestName(name: "系統程式第一次小考", Number: "100"), TestName(name: "系統程式第二次小考", Number: "100")]
+    
+}
+
 struct MarkPapers: View {
     
-
-    @State var TestTitle : [TestName] = []
-    var Name = [TestName(name: "系統程式第一次小考", Number: 1), TestName(name: "系統程式第二次小考", Number: 2)]
     
+
+    @ObservedObject var Test: TestName2
+    
+
     var body: some View {
+        
         
         ZStack{
             VStack{
@@ -24,11 +31,13 @@ struct MarkPapers: View {
                     .background(RoundedRectangle(cornerRadius:30)
                     .foregroundColor(Color(hex: "FFE1EA")))
                 
-                List(Name) { name in
-                    NavigationLink(
-                        destination: QuestionList(Test: name)){
-                        MarkPaperRow(Test: name)
-                    }.background(Color(hex: "DEF9FF"))
+                List(Test.Name) { name in
+                    Section {
+                        NavigationLink(
+                            destination: QuestionList(Test: name)){
+                            MarkPaperRow(Test: name)
+                        }.background(Color(hex: "DEF9FF"))
+                    }.listStyle(InsetGroupedListStyle())
                 }
             }
         }
@@ -38,6 +47,6 @@ struct MarkPapers: View {
 
 struct MarkPapers_Previews: PreviewProvider {
     static var previews: some View {
-        MarkPapers()
+        MarkPapers(Test: TestName2())
     }
 }

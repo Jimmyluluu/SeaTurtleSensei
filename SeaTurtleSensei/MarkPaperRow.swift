@@ -18,7 +18,7 @@ struct Paper: Codable {
 struct TestName :Identifiable {
     let id = UUID()
     var name: String
-    let Number: Int
+    let Number: String
 }
 
 func Connect() {

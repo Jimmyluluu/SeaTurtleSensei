@@ -7,17 +7,21 @@
 
 import SwiftUI
 
+
 struct SetTest: View {
     
+    @EnvironmentObject var Paper :TestName2
     //新增考卷名稱
-    @State
-    var testname = ""
+    @State var testname = ""
     //新增考卷總分
     @State  var total = ""
     
     @StateObject var AddData = TestName2()
     
-    @State var showSheet = false
+    @EnvironmentObject var PaperName:TestName2
+    
+    @Environment(\.presentationMode) private var presentationMode
+
 
     var body: some View {
         ZStack {
@@ -80,8 +84,10 @@ struct SetTest: View {
                 }.offset(x: 0, y: -20)
                 
                 Button(action:{
-                    self.add()
-                    self.showSheet = false
+                    //self.add()
+                    print(AddData.Name)
+                    PaperName.addName(NewName: self.testname, NewNumber: self.total)
+                    self.presentationMode.wrappedValue.dismiss()
                     
                 }){
                     Text("FINISH")
@@ -94,8 +100,8 @@ struct SetTest: View {
     }
     
     func add() {
-       
         AddData.Name.append(TestName(name: self.testname, Number: self.total))
+        Paper.Name.append(TestName(name: self.testname, Number: self.total))
         print("AA")
         print(AddData.Name)
     }

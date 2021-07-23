@@ -9,19 +9,28 @@ import SwiftUI
 import UIKit
 
 class TestName2: ObservableObject {
-    @Published var Name = [TestName(name: "系統程式第一次小考", Number: "100"), TestName(name: "系統程式第二次小考", Number: "100")]
-    
+    @Published var Name = [TestName(name: "系統程式第一次小考", Number: "100")]
+    func addName(NewName:String, NewNumber:String) {
+        Name.append(TestName(name: NewName, Number: NewNumber))
+        
+    }
 }
+ 
 
 struct MarkPapers: View {
     
-    
-    @State var ShowingPopover = false
-    @StateObject var Test: TestName2
+    let testName = "系統程式第一次小考"
+    let testNumber = "100"
     
 
+    
+    @State var ShowingPopover = false
+    
+    @State var each = false
+    
+    @EnvironmentObject var PaperName :TestName2
+    
     var body: some View {
-        
         
         ZStack{
             VStack{
@@ -32,15 +41,16 @@ struct MarkPapers: View {
                     .foregroundColor(Color(hex: "FFE1EA")))
                 
                 List() {
-                    ForEach(Test.Name) {name in
+                    ForEach(PaperName.Name) {name in
                         NavigationLink(
                             destination: QuestionList(Test: name)){
                             MarkPaperRow(Test: name)
                         }.background(Color(hex: "DEF9FF"))
                     }.listStyle(InsetGroupedListStyle())
+                    
                 }
                 Button(action: {
-                        ShowingPopover = true
+                    ShowingPopover = true
                     
                 }){
                     Text("ADD")
@@ -54,15 +64,11 @@ struct MarkPapers: View {
             }
         }
     }
-    func pri() {
-        print("BB")
-        print(Test.Name)
-    }
 }
 
 
 struct MarkPapers_Previews: PreviewProvider {
     static var previews: some View {
-        MarkPapers(Test: TestName2())
+        MarkPapers().environmentObject(TestName2())
     }
 }

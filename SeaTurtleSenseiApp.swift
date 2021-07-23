@@ -9,9 +9,11 @@ import SwiftUI
 
 @main
 struct SeaTurtleSenseiApp: App {
+    
+    @StateObject var PaperName = TestName2()
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView().environmentObject(PaperName)
         }
     }
 }

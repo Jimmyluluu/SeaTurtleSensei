@@ -7,12 +7,53 @@
 
 import SwiftUI
 
+struct Location: Identifiable {
+    let id: String
+    let name: String
+
+    init(uuid: () -> String = { UUID().uuidString }, name: String) {
+        self.id = uuid()
+        self.name = name
+    }
+}
+
 struct Schedule: View {
+
+    let locations: [Location] = [
+        Location(name: "彰化"),
+        Location(name: "台中"),
+        Location(name: "南投"),
+    ]
+
     var body: some View {
-        ZStack{
-            Color(hex:"EAF9FF").edgesIgnoringSafeArea(.all)
-            Text("WELCOME! LET'S SETUP SCHEDULE!!!")
-                .foregroundColor(Color(hex: "1A90AA"))
+        VStack {
+            HStack {
+                Text("中部")
+                    .font(.title)
+                    .fontWeight(.heavy)
+                Spacer(minLength: 0)
+            }
+            .padding(.horizontal)
+            ScrollView {
+                VStack(spacing: 8) {
+                    ForEach(locations, id: \.id) { location in
+                        HStack {
+                            Image(systemName: "mappin")
+                                .font(.system(size: 19))
+                                .foregroundColor(.red)
+                                .padding()
+                            VStack(alignment: .leading, spacing: 8) {
+                                Text(location.name)
+                                Text(location.id)
+                                    .font(.caption)
+                                    .foregroundColor(Color.gray)
+                            }
+                            Spacer(minLength: 0)
+                        }
+                    }
+                }
+                .padding()
+            }
         }
     }
 }

@@ -69,7 +69,7 @@ struct BeginTest: View {
                         .offset(x: 0, y: -60)
                         .padding()
                     
-                    TextField("輸入班級", text: $school)
+                    TextField("輸入班級", text: $yourclass)
                         .foregroundColor(Color(hex: "1A90AA"))
                         .padding(13)
                         .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color(hex: "1A90AA"), lineWidth: 1)
@@ -83,7 +83,7 @@ struct BeginTest: View {
                         .offset(x: 0, y: -55)
                         .padding()
                     
-                    TextField("輸入姓名", text: $school)
+                    TextField("輸入姓名", text: $name)
                         .foregroundColor(Color(hex: "1A90AA"))
                         .padding(13)
                         .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color(hex: "1A90AA"), lineWidth: 1)
@@ -97,7 +97,7 @@ struct BeginTest: View {
                         .offset(x: 0, y: -50)
                         .padding()
                     
-                    TextField("輸入學號", text: $school)
+                    TextField("輸入學號", text: $number)
                         .foregroundColor(Color(hex: "1A90AA"))
                         .padding(13)
                         .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color(hex: "1A90AA"), lineWidth: 1)

@@ -7,14 +7,21 @@
 
 import SwiftUI
 
+
 struct SetTest: View {
     
+    @EnvironmentObject var Paper :TestName2
     //新增考卷名稱
-    @State private var testname = ""
+    @State var testname = ""
     //新增考卷總分
-    @State private var total = ""
+    @State  var total = ""
     
-    @ObservedObject var AddData = TestName2()
+    @StateObject var AddData = TestName2()
+    
+    @EnvironmentObject var PaperName:TestName2
+    
+    @Environment(\.presentationMode) private var presentationMode
+
 
     var body: some View {
         ZStack {
@@ -76,25 +83,26 @@ struct SetTest: View {
                     
                 }.offset(x: 0, y: -20)
                 
-                NavigationLink(
-                    destination: MarkPapers(Test: AddData).onAppear{
-                        self.add()
-                    }){
-                        Text("FINISH")
-                            .frame(width: 120, height: 40, alignment: .center)
-                            .foregroundColor(.white)
-                            .background(RoundedRectangle(cornerRadius: 20).foregroundColor(Color(hex: "FB93B2")))
-                    }
-                    .offset(x: 0, y: 150)
-                    .padding(5)
+                Button(action:{
+                    //self.add()
+                    print(AddData.Name)
+                    PaperName.addName(NewName: self.testname, NewNumber: self.total)
+                    self.presentationMode.wrappedValue.dismiss()
+                    
+                }){
+                    Text("FINISH")
+                        .frame(width: 120, height: 40, alignment: .center)
+                        .foregroundColor(.white)
+                        .background(RoundedRectangle(cornerRadius: 20).foregroundColor(Color(hex: "FB93B2")))
+                }.offset(x: 0, y: 150).padding(5)
             }.offset(x: 0, y: -40)
         }
     }
     
     func add() {
-        
-        print("apple")
         AddData.Name.append(TestName(name: self.testname, Number: self.total))
+        Paper.Name.append(TestName(name: self.testname, Number: self.total))
+        print("AA")
         print(AddData.Name)
     }
 }

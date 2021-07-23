@@ -25,7 +25,7 @@ struct Home: View {
                 ScrollView(.horizontal) {
                     HStack(alignment: .center, spacing: 10) {
                         NavigationLink(
-                            destination: MarkPapers(Test: TestName2())){
+                            destination: MarkPapers()){
                             Text("考卷管理")
                                 .frame(width: 120, height: 35, alignment: .center)
                                 .foregroundColor(.white)
@@ -58,7 +58,7 @@ struct Home: View {
                         //考卷管理
                         ZStack{
                             NavigationLink(
-                                destination: MarkPapers(Test: TestName2())){
+                                destination: MarkPapers()){
                                 RoundedRectangle(cornerRadius: 20, style: .continuous)
                                     .fill(Color(hex: "0F9FBE"))
                                     .frame(width: 350, height: 145, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)

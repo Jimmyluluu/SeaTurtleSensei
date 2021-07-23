@@ -11,11 +11,11 @@ struct SetQuestion: View {
     //選擇題型的下拉式選單
     @State private var selection = 1
     
-    // 輸入題目題號
-    @State private var qnum = ""
+    // 輸入該題總分
+    @State private var totalgrade = ""
     
     // 輸入題目選項數量
-    @State private var inum = ""
+    @State private var totalitem = ""
     
     // 輸入題目選項配分
     @State private var qgrade = ""
@@ -62,47 +62,104 @@ struct SetQuestion: View {
                             .offset(x: 20, y: 40)
                             .stroke(Color(hex: "1A90AA"), lineWidth:2)
                     
+                        
+                        //選擇題型
+                        VStack {
+                            Text("選擇題型")
+                                .background(Color(.white))
+                                .offset(x: -90, y: 143)
+                            Picker(selection: $selection, label: Text("選擇題型")) {
+                                Text("單選題").tag(1)
+                                Text("多選題").tag(2)
+                                Text("填充題").tag(3)
+                            }
+                            .frame(width: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                            .offset(x: 0, y: 70)
+                        }.offset(x: 0, y: -480)
+                        
                         VStack{
-                            
-                            //選擇題型
-                            VStack {
-                                Text("選擇題型")
-                                    .background(Color(.white))
-                                    .offset(x: -90, y: 143)
-                                Picker(selection: $selection, label: Text("選擇題型")) {
-                                    Text("單選題").tag(1)
-                                    Text("多選題").tag(2)
-                                    Text("填充題").tag(3)
-                                }
-                                .frame(width: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                                .offset(x: 0, y: 70)
-                            }.offset(x: 0, y: -360)
-                            
                             //輸入題目敘述
                             VStack {
-                                  Text("Testing Placeholder Example")
-                                  ZStack(alignment: Alignment(horizontal: .center, vertical: .top)) {
+                                Text("題目:")
+                                    .font(.system(size: 20))
+                                    .offset(x: -120, y: -250)
+                                ZStack(alignment: Alignment(horizontal: .center, vertical: .top)) {
                                     TextEditor(text: $detail)
-                                      .padding(EdgeInsets(top: -7, leading: -4, bottom: -7, trailing: -4)) // fix padding not aligning with TextField
-                                    if detail.isEmpty {
-                                      TextField("Placeholder text here", text: $detail)
-                                        .disabled(true) // don't allow for it to be tapped
+                                        .frame(width: 300, height: 300)
+                                        .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color(hex: "1A90AA"), lineWidth: 1))
+                                      .padding(EdgeInsets(top: -7, leading: -4, bottom: -7, trailing: -4))
+                                        .offset(x: 0, y: -250)
                                     
-                                  }
-                                }
-                              }
+                                    if detail.isEmpty {
+                                      TextField("輸入題目敘述", text: $detail)
+                                        .offset(x: 150, y: -150)
+                                        .disabled(true)
+                                    }
+                                }  //zstack
+                            }.offset(x: 0, y: 100)  //題目vstack
+                            
+                            HStack{
+                                Text("總分：")
+                                    .font(.system(size: 20))
+                                    .offset(x: -110, y: -240)
+                                
+                                TextField("輸入該題總分", text: $totalgrade)
+                                    .foregroundColor(Color(hex: "1A90AA"))
+                                    .padding(10)
+                                    .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color(hex: "1A90AA"), lineWidth: 1)
+                                    )
+                                    .background(
+                                        RoundedRectangle(cornerRadius: 10)
+                                            .foregroundColor(.white)
+                                    )
+                                    .frame(width: 140, height: 40, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                                    .offset(x: -120, y: -240)
+                            }.offset(x: 70, y: 105)
+                            
+                            HStack{
+                                Text("選項數量：")
+                                    .font(.system(size: 20))
+                                    .offset(x: -100, y: -240)
+                                
+                                TextField("數字 1~5", text: $totalitem)
+                                    .foregroundColor(Color(hex: "1A90AA"))
+                                    .padding(10)
+                                    .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color(hex: "1A90AA"), lineWidth: 1)
+                                    )
+                                    .background(
+                                        RoundedRectangle(cornerRadius: 10)
+                                            .foregroundColor(.white)
+                                    )
+                                    .frame(width: 140, height: 40, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                                    .offset(x: -110, y: -240)
+                            }.offset(x: 80, y: 120)
+                            
+                            
+                            //開始建立選項
+                            VStack{
+                                Text("建立選項")
+                                    .font(.system(size: 20))
+                            }.offset(x: 0, y: -70)  //選項vstack
+                            
                             
                             VStack{
                                 NavigationLink(
                                     destination: Home()){
-                                        Text("FINISH")
+                                        Text("出下一題")
+                                            .frame(width: 120, height: 40, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                                            .foregroundColor(.white)
+                                            .background(RoundedRectangle(cornerRadius: 20).foregroundColor(Color(hex: "FB93B2")))
+                                    }
+                                    .padding(5)
+                                NavigationLink(
+                                    destination: Home()){
+                                        Text("完成出題")
                                             .frame(width: 120, height: 40, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                                             .foregroundColor(.white)
                                             .background(RoundedRectangle(cornerRadius: 20).foregroundColor(Color(hex: "FB93B2")))
                                     }
                                     .padding(5)
                             }.offset(x: 0, y: 80)  //題型以下的vstack
-                            
                         }.offset(x: 0, y: 80)  //新增考卷以下的vstack
                     }.offset(x: 0, y: 60)  //zstack
                 }  //vstack

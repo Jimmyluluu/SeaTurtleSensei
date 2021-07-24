@@ -7,12 +7,14 @@
 
 import SwiftUI
 
+
 struct CorrectPaper: View {
     var body: some View {
         ZStack{
             Color(hex:"EAF9FF").edgesIgnoringSafeArea(.all)
             Text("WELCOME! LET'S CORRECTING PAPER!!!")
                 .foregroundColor(Color(hex: "1A90AA"))
+            
         }
     }
 }

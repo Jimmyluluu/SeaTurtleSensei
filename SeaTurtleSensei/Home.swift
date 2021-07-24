@@ -33,7 +33,7 @@ struct Home: View {
                         }
                         
                         NavigationLink(
-                            destination: Schedule()){
+                            destination: DatePicker()){
                             Text("行事曆")
                                 .frame(width: 120, height: 35, alignment: .center)
                                 .foregroundColor(.white)

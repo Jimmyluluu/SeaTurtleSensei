@@ -158,6 +158,6 @@ struct SignUp: View {
 
 struct SignUp_Previews: PreviewProvider {
     static var previews: some View {
-        SignUp()
+        SignUp().environmentObject(Account2())
     }
 }

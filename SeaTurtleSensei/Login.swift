@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+//帳號的資料
 struct Account :Identifiable {
     let id = UUID()
     var Name: String
@@ -18,10 +19,13 @@ struct Account :Identifiable {
     //var Choice: String
 }
 
+//帳號資料的clasee
 class Account2: ObservableObject {
     @Published var User = [Account(Name: "Test", Gentle: "男", Mobile: "0912345678", Email: "test", Password: "1111")]
     func addName(NewName: String, NewGentle: String, NewMobile: String, NewEmail: String, NewPassword: String) {
         User.append(Account(Name: NewName, Gentle: NewGentle, Mobile: NewMobile, Email: NewEmail, Password: NewPassword))
+    }
+    func editName(NewName: String, NewGentle: String, NewMobile: String, NewEmail: String, NewPassword: String){
         
     }
 }

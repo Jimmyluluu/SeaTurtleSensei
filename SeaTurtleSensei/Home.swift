@@ -82,7 +82,7 @@ struct Home: View {
                         //行事曆
                         ZStack{
                             NavigationLink(
-                                destination: Schedule()){
+                                destination: DatePicker()){
                                 RoundedRectangle(cornerRadius: 20, style: .continuous)
                                     .fill(Color(hex: "3DBAD6"))
                                     .frame(width: 350, height: 145, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)

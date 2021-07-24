@@ -11,11 +11,8 @@ struct SetQuestion: View {
     //選擇題型的下拉式選單
     @State private var selection = 1
     
-    // 輸入該題總分
-    @State private var totalgrade = ""
-    
     // 輸入題目選項數量
-    @State private var totalitem = ""
+//    @State private var totalitem = ""
     
     // 輸入題目選項配分
     @State private var qgrade = ""
@@ -24,11 +21,13 @@ struct SetQuestion: View {
     @State private var detail = ""
     
     
-    @State var ContentArray = ["A","B","C"]
+//    @State var ContentArray = ["A","B","C"]
     
     @State var Fasle = false
     
     @Environment(\.presentationMode) private var presentationMode
+    
+    @EnvironmentObject var Question :QuestionName2
     
     var body: some View {
         ZStack {
@@ -109,7 +108,7 @@ struct SetQuestion: View {
                             Text("總分：")
                                 .font(.system(size: 20))
                                     .offset(x: -110, y: -240)
-                            TextField("輸入該題總分", text: $totalgrade)
+                            TextField("輸入該題總分", text: $qgrade)
                                     .foregroundColor(Color(hex: "1A90AA"))
                                     .padding(10)
                                     .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color(hex: "1A90AA"), lineWidth: 1))
@@ -122,6 +121,7 @@ struct SetQuestion: View {
                     HStack {
                     Button(action:{
                             self.Fasle = true
+                        
                         }) {
                             Text("Next").frame(width: 120, height: 40, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                                 .foregroundColor(.white)
@@ -132,6 +132,7 @@ struct SetQuestion: View {
                         
                         Button(action: {
                             self.presentationMode.wrappedValue.dismiss()
+                            Question.addName(NewName: self.detail, NewNumber: self.qgrade)
                         }, label: {
                             Text("Finish").frame(width: 120, height: 40, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                                 .foregroundColor(.white)
@@ -147,7 +148,7 @@ struct SetQuestion: View {
 
 struct SetQuestionPreviews: PreviewProvider {
     static var previews: some View {
-        SetQuestion()
+        SetQuestion().environmentObject(QuestionName2())
     }
 }
 

@@ -9,7 +9,10 @@ import SwiftUI
 
 struct DatePicker: View {
     @State private var item = ""
+    
     @State private var date = ""
+    
+    @Environment(\.presentationMode) private var presentationMode
     var body: some View {
         ZStack {
             Color(hex:"1A90AA").edgesIgnoringSafeArea(.all)
@@ -69,16 +72,17 @@ struct DatePicker: View {
                         .padding()
                 }.offset(x: 0, y: -20)
                 
-                NavigationLink(
-                    destination: Home()){
-                        Text("FINISH")
-                            .frame(width: 120, height: 40, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                            .foregroundColor(.white)
-                            .background(RoundedRectangle(cornerRadius: 20).foregroundColor(Color(hex: "FB93B2")))
-                    }
-                    .offset(x: 0, y: 110)
-                    .padding(5)
-            }.offset(x: 0, y: -40)
+                Button(action:{
+                    //self.add()
+                    self.presentationMode.wrappedValue.dismiss()
+                    
+                }){
+                    Text("FINISH")
+                        .frame(width: 120, height: 40, alignment: .center)
+                        .foregroundColor(.white)
+                        .background(RoundedRectangle(cornerRadius: 20).foregroundColor(Color(hex: "FB93B2")))
+                }.offset(x: 0, y: 150).padding(5)
+            }
         }
     }
 }

@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct Account: View {
+struct AccountSetting: View {
     var body: some View {
         ZStack{
             Color(hex:"EAF9FF").edgesIgnoringSafeArea(.all)
@@ -17,8 +17,8 @@ struct Account: View {
     }
 }
 
-struct Account_Previews: PreviewProvider {
+struct AccountSetting_Previews: PreviewProvider {
     static var previews: some View {
-        Account()
+        AccountSetting()
     }
 }

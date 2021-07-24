@@ -10,9 +10,6 @@ import SwiftUI
 import Combine
 
 //
-struct Paper: Codable {
-    
-}
 
 //考卷名稱
 struct TestName :Identifiable {

@@ -43,7 +43,7 @@ struct MarkPapers: View {
                 List() {
                     ForEach(PaperName.Name) {name in
                         NavigationLink(
-                            destination: QuestionList(Test: name)){
+                            destination: ManageTest()){
                             MarkPaperRow(Test: name)
                         }.background(Color(hex: "DEF9FF"))
                     }.listStyle(InsetGroupedListStyle())

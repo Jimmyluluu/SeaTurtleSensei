@@ -1,14 +1,20 @@
 //
-//  SetupExam.swift
+//  MultipleChoiceQuestion.swift
 //  SeaTurtleSensei
 //
-//  Created by 一隻阿旻 on 2021/7/11.
+//  Created by 魯敬元 on 2021/7/24.
 //
 
 import SwiftUI
 
-struct Schedule: View {
+struct IdentifiableGameResult: Identifiable {
+    var id = UUID()
+    var score: Int
+}
 
+
+
+struct MultipleChoiceQuestion: View {
     // 輸入題目選項數量
     @State private var totalitem = ""
 
@@ -34,10 +40,8 @@ struct Schedule: View {
             IdentifiableGameResult(score: 4),
             IdentifiableGameResult(score: 5)
     ]
-    
+
     var body: some View {
-        
-        
         ScrollView(.vertical){
             
             TextField("幾個選項", text: $totalitem)
@@ -72,8 +76,8 @@ struct Schedule: View {
     }
 }
 
-struct Schedule_Previews: PreviewProvider {
+struct MultipleChoiceQuestion_Previews: PreviewProvider {
     static var previews: some View {
-        Schedule()
+        MultipleChoiceQuestion()
     }
 }

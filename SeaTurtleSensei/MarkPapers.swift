@@ -59,7 +59,7 @@ struct MarkPapers: View {
                         .background(RoundedRectangle(cornerRadius: 20).foregroundColor(Color(hex: "FB93B2")))
                 }.popover(isPresented: $ShowingPopover, content: {
                     SetTest()
-                })
+                }).offset(x: 0, y: -30)
                   
             }
         }

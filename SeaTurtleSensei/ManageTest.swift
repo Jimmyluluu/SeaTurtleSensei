@@ -37,7 +37,7 @@ struct ManageTest: View {
                 //新增考卷
 
                 ZStack{
-                    NavigationLink(destination:BeginTest()){
+                    NavigationLink(destination:SetQuestion()){
                         ZStack {
                             RoundedRectangle(cornerRadius: 25.0)
                                 .foregroundColor(Color(hex: "FFFFF"))

@@ -7,8 +7,27 @@
 
 import SwiftUI
 
-struct Login: View {
+struct Account :Identifiable {
+    let id = UUID()
+    var Name: String
+    var Gentle: String
+    var Mobile: String
+    var Email: String
+    var Password: String
     
+    //var Choice: String
+}
+
+class Account2: ObservableObject {
+    @Published var User = [Account(Name: "Test", Gentle: "男", Mobile: "0912345678", Email: "test", Password: "1111")]
+    func addName(NewName: String, NewGentle: String, NewMobile: String, NewEmail: String, NewPassword: String) {
+        User.append(Account(Name: NewName, Gentle: NewGentle, Mobile: NewMobile, Email: NewEmail, Password: NewPassword))
+        
+    }
+}
+
+struct Login: View {
+    @EnvironmentObject var AccountPassword:Account2
     //帳號
     @State private var email = ""
     
@@ -88,13 +107,18 @@ struct Login: View {
                     NavigationLink(
                         destination: Home(),isActive : $TrueFalse) {
                         Button(action: {
-                            attemptingLogin = true
-                            if self.email == testEmail && self.pwd == testPasswer {
-                                self.TrueFalse = true
+                            for user in AccountPassword.User {
+                                attemptingLogin = true
+                                
+                                if self.email == user.Email && self.pwd == user.Password {
+                                    self.TrueFalse = true
+                                }
+                                else {
+                                    self.attemptingLogin = false
+                                }
+                                
                             }
-                            else {
-                                self.attemptingLogin = false
-                            }
+
                         }, label: {
                             Text("Login")
                                 .frame(width: 140, height: 40, alignment: .center)
@@ -124,6 +148,6 @@ struct Login: View {
 
 struct Login_Previews: PreviewProvider {
     static var previews: some View {
-        Login()
+        Login().environmentObject(Account2())
     }
 }

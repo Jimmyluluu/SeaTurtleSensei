@@ -68,21 +68,23 @@ struct ManageTest: View {
                 }.padding(10)
                 //批改考卷
                 ZStack{
-                    RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/)
-                        .foregroundColor(Color(hex: "FFFFF"))
-                        .frame(width: 330, height: 110, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                        .shadow(color: .gray, radius: 2, x: 1, y: 1)
-                    
-                    RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/)
-                        .frame(width: 140, height: 110, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                        .foregroundColor(Color(hex: "FFA6B0"))
-                        .offset(x: -95, y: 0)
+                    NavigationLink (destination:TestList()){
+                        RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/)
+                            .foregroundColor(Color(hex: "FFFFF"))
+                            .frame(width: 330, height: 110, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                            .shadow(color: .gray, radius: 2, x: 1, y: 1).offset(x: 80, y: 0)
+                        
+                        RoundedRectangle(cornerRadius: /*@START_MENU_TOKEN@*/25.0/*@END_MENU_TOKEN@*/)
+                            .frame(width: 140, height: 110, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                            .foregroundColor(Color(hex: "FFA6B0"))
+                            .offset(x: -260, y: 0)
+                    }
                         
                     HStack{
                         Image("Check")
                             .resizable()
                             .frame(width: 100, height: 80, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                            .offset(x: -10, y: 0)
+                            .offset(x: -20, y: 0)
                         
                         VStack{
                             Text("批改考卷")
@@ -90,7 +92,7 @@ struct ManageTest: View {
                                 .offset(x: 5, y: -15)
                             Text("Correcting Exam")
                                 .foregroundColor(Color(hex: "5F9EAC"))
-                                .offset(x: 30, y: -13)
+                                .offset(x: 15, y: -13)
                         }
                         .offset(x: -20, y: 10)
                     }

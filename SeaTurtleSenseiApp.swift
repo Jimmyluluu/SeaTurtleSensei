@@ -10,6 +10,9 @@ import SwiftUI
 @main
 struct SeaTurtleSenseiApp: App {
     
+    //帳號密碼
+    @StateObject var AccountPassword = Account2()
+    
     //新增問題
     @StateObject var Question = QuestionName2()
     
@@ -25,6 +28,7 @@ struct SeaTurtleSenseiApp: App {
                 .environmentObject(PaperName)
                 .environmentObject(Question)
                 .environmentObject(StudentQuestion)
+                .environmentObject(AccountPassword)
         }
     }
 }

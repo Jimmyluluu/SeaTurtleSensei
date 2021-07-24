@@ -24,7 +24,7 @@ struct TestListRow: View {
                 HStack {
                     Text(StudentPaper.name)
                     Text(StudentPaper.Number).offset(x: 200, y: 0)
-                    Text("分").offset(x: 190, y: 0)
+                    Text("分").offset(x: 195, y: 0)
                 }
             }
         }
@@ -61,14 +61,14 @@ struct TestList: View {
                 List() {
                     ForEach(StudentQuestion.Name) {name in
                         NavigationLink(
-                            destination: ManageTest()){
+                            destination: StudentFinshPaper()){
                             TestListRow(StudentPaper: name)
                         }.background(Color(hex: "DEF9FF"))
                     }.listStyle(InsetGroupedListStyle())
                     
                 }
                 NavigationLink(
-                    destination: SetQuestion()){
+                    destination: AddStudentPaper()){
                         Text("ADD")
                             .frame(width: 120, height: 40, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                             .foregroundColor(.white)

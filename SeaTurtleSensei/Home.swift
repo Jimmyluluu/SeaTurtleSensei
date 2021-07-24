@@ -17,7 +17,7 @@ struct Home: View {
                     .foregroundColor(Color(hex: "1A90AA"))
                     .offset(x: 0, y: 15)
                 NavigationLink(
-                    destination: Account()){ //點選頭像編輯帳號
+                    destination: AccountSetting()){ //點選頭像編輯帳號
                     Image("LittleLogo").resizable().background(Color(hex: "097294")).clipShape(Circle()).frame(width: 60, height: 60)
                 }.offset(x: 145, y: -40)
                 
@@ -41,7 +41,7 @@ struct Home: View {
                         }
                         
                         NavigationLink(
-                            destination: Account()){
+                            destination: AccountSetting()){
                             Text("帳號管理")
                                 .frame(width: 120, height: 35, alignment: .center)
                                 .foregroundColor(.white)
@@ -105,7 +105,7 @@ struct Home: View {
                         //帳號管理
                         ZStack{
                             NavigationLink(
-                                destination: Account()){
+                                destination: AccountSetting()){
                                 RoundedRectangle(cornerRadius: 20, style: .continuous)
                                     .fill(Color(hex: "AFECFA"))
                                     .frame(width: 350, height: 145, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)

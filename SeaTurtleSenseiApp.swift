@@ -9,11 +9,22 @@ import SwiftUI
 
 @main
 struct SeaTurtleSenseiApp: App {
+    
+    //新增問題
     @StateObject var Question = QuestionName2()
+    
+    //新增考試
     @StateObject var PaperName = TestName2()
+    
+    //新增尚未改的考卷
+    @StateObject var StudentQuestion = UnMarkTest2()
+    
     var body: some Scene {
         WindowGroup {
-            ContentView().environmentObject(PaperName).environmentObject(Question)
+            ContentView()
+                .environmentObject(PaperName)
+                .environmentObject(Question)
+                .environmentObject(StudentQuestion)
         }
     }
 }

@@ -21,7 +21,7 @@ struct Login: View {
     
     //測試用帳號密碼
     let testEmail = "test"
-    let testPasswer = "1234"
+    let testPasswer = "0000"
     
     var body: some View {
         ZStack{

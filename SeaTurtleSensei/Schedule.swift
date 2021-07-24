@@ -28,6 +28,9 @@ struct Schedule: View {
     
     @State private var name = ""
     
+    @State var TrueFalse = false
+    
+    @State var temp = 0
     
     let results = [
             IdentifiableGameResult(score: 1),
@@ -35,9 +38,11 @@ struct Schedule: View {
             IdentifiableGameResult(score: 3),
             IdentifiableGameResult(score: 4),
             IdentifiableGameResult(score: 5)
-        ]
+    ]
     
     var body: some View {
+        
+        
         ScrollView(.vertical){
             
             TextField("幾個選項", text: $totalitem)
@@ -45,33 +50,30 @@ struct Schedule: View {
                 .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color(hex: "1A90AA"), lineWidth: 1))
             
             Button("go") {
-                if let total = Int(totalitem) {
-                    for _ in 0 ... total {
-                        print("Number is \(self.totalitem)")
+                if let total = Int(self.totalitem) {
+                    for i in  1 ... total {
+                        print("Number is \(i)")
                     }
-                } else {
+                    self.TrueFalse = true
+                    self.temp = Int(self.totalitem)!
+                }
+                else {
                     print("not number")
                 }
-            }.offset(x: 0, y: -10)
-            .padding()
+            }.offset(x: 0, y: -10).padding()
             
-            VStack {
-                VStack {
-                    ForEach(results) { result in
-                        VStack{
-                            Text("選項: \(result.score)")
-                                
-                            TextField("選項內容", text : $content)
-                                .padding()
-                                .frame(width: 300, height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                                .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color(hex: "1A90AA"), lineWidth: 1))
-                                .padding()
-                        }
-                    }  //foreach
+            if TrueFalse {
+                ForEach((1...Int(exactly: self.temp)!), id: \.self) {
+                    Text("\($0)")
+                    TextField("選項內容", text : $content)
+                    .padding()
+                    .frame(width: 300, height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                    .overlay(RoundedRectangle(cornerRadius: 10)
+                    .stroke(Color(hex: "1A90AA"), lineWidth: 1))
+                    .padding()
                 }
             }
         }
-        
     }
 }
 

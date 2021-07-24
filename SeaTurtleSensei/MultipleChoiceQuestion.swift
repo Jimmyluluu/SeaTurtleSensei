@@ -22,7 +22,7 @@ struct MultipleChoiceQuestion: View {
     @State private var total = 0
     
     //選項內容
-    @State private var content = ""
+    @State private var content:[String] = ["","","","","",""]
 
     
     @State var text: String = ""
@@ -32,6 +32,8 @@ struct MultipleChoiceQuestion: View {
     @State var TrueFalse = false
     
     @State var temp = 0
+    
+    @Environment(\.presentationMode) private var presentationMode
     
     let results = [
             IdentifiableGameResult(score: 1),
@@ -47,9 +49,9 @@ struct MultipleChoiceQuestion: View {
             TextField("幾個選項", text: $totalitem)
                 .frame(width: 300, height: 30)
                 .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color(hex: "1A90AA"), lineWidth: 1))
-            
-            Button("go") {
-                if let total = Int(self.totalitem) {
+            HStack{
+                Button(action:{
+                        if let total = Int(self.totalitem) {
                     for i in  1 ... total {
                         print("Number is \(i)")
                     }
@@ -58,13 +60,25 @@ struct MultipleChoiceQuestion: View {
                 }
                 else {
                     print("not number")
-                }
-            }.offset(x: 0, y: -10).padding()
-            
+                }}) {
+                    Text("GO").frame(width: 120, height: 40, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                        .foregroundColor(.white)
+                        .background(RoundedRectangle(cornerRadius: 20).foregroundColor(Color(hex: "FB93B2")))
+           
+                }.padding()
+                
+                Button(action: {
+                    self.presentationMode.wrappedValue.dismiss()
+                }, label: {
+                    Text("Finish").frame(width: 120, height: 40, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                        .foregroundColor(.white)
+                        .background(RoundedRectangle(cornerRadius: 20).foregroundColor(Color(hex: "FB93B2")))
+                })
+            }
             if TrueFalse {
-                ForEach((1...Int(exactly: self.temp)!), id: \.self) {
-                    Text("\($0)")
-                    TextField("選項內容", text : $content)
+                ForEach((1...Int(exactly: self.temp)!), id: \.self) { i in
+                    Text("\(i)")
+                    TextField("選項內容", text : $content[i])
                     .padding()
                     .frame(width: 300, height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                     .overlay(RoundedRectangle(cornerRadius: 10)
@@ -72,7 +86,7 @@ struct MultipleChoiceQuestion: View {
                     .padding()
                 }
             }
-        }
+        }.offset(x: 0, y: 30)
     }
 }
 
